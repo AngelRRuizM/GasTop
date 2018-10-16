@@ -28,6 +28,24 @@ class GasStation: Codable
     var gasScore: Float?;
     var gasComment: String?;
 
+    init (id: Int byUser: Int, forGasStation: Int, date: Date, generalScore: Float, generalComment: String?, magnaPrice: Float?,premiumPrice: Float?, dieselPrice: Float?, serviceScore: Float?, serviceComment: String?, timeScore: Float?, timeComment: String?, gasScore: Float?, gasComment: String?) {
 
+        self.id = id;
+        self.byUser = byUser;
+        self.forGasStation = forGasStation;
+        self.date = date;
 
+        self.generalScore = generalScore;
+        self.generalComment = generalComment;
+        self.magnaPrice = magnaPrice;
+        self.premiumPrice = premiumPrice;
+        self.dieselPrice = dieselPrice;
+
+        self.serviceScore = serviceScore;
+        self.serviceComment = serviceComment;
+        self.timeScore = timeScore;
+        self.timeComment = timeComment;
+        self.gasScore = gasScore;
+        self.gasComment = gasComment;
+    }
 }

@@ -31,29 +31,28 @@ class GasStation: Codable
     var serviceScoreReviews: Int;
     var timeScoreReviews: Int;
     
-    init() {
+    init(id: Int, lat: Float, lng: Float, name: String, totalMagnaPrice: Float, totalPremiumPrice: Float, totalDieselPrice: Float, totalGeneralScore: Float, totalGasScore: Float, totalServiceScore: Float, totalTimeScore: Float, magnaPriceReviews: Int, premiumPriceReviews: Int, dieselPriceReviews: Int, generalScoreReviews: Int, gasScoreReviews: Int, serviceScoreReviews: Int, timeScoreReviews: Int) {
 
-        self.id =  ;
-		self.lat =  ;
-		self.lng =  ;
-		self.name =  ;
+        self.id =  id;
+		self.lat =  lat;
+		self.lng =  lng;
+		self.name =  name;
 		
-		self.totalMagnaPrice =  ;
-		self.totalPremiumPrice =  ;
-		self.totalDieselPrice =  ;
-		self.totalGeneralScore =  ;
-		self.totalGasScore =  ;
-		self.totalServiceScore =  ;
-		self.totalTimeScore =  ;
+		self.totalMagnaPrice =  totalMagnaPrice;
+		self.totalPremiumPrice = totalPremiumPrice;
+		self.totalDieselPrice =  totalDieselPrice;
+		self.totalGeneralScore =  totalGeneralScore;
+		self.totalGasScore =  totalGasScore;
+		self.totalServiceScore =  totalServiceScore;
+		self.totalTimeScore =  totalTimeScore;
 		
-		self.magnaPriceReviews =  ;
-		self.premiumPriceReviews =  ;
-		self.dieselPriceReviews =  ;
-		self.generalScoreReviews =  ;
-		self.gasScoreReviews =  ;
-		self.serviceScoreReviews =  ;
-		self.timeScoreReviews =  ;
-
+		self.magnaPriceReviews =  magnaPriceReviews;
+		self.premiumPriceReviews =  premiumPriceReviews;
+		self.dieselPriceReviews =  dieselPriceReviews;
+		self.generalScoreReviews =  generalScoreReviews;
+		self.gasScoreReviews =  gasScoreReviews;
+		self.serviceScoreReviews = serviceScoreReviews ;
+		self.timeScoreReviews =  timeScoreReviews;
     }
     
     /**
