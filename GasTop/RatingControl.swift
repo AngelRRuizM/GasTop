@@ -116,9 +116,9 @@ class RatingControl: UIStackView {
         var localRating = rating
         
         //References to images
-        let emptyStar = #imageLiteral(resourceName: "emptyStar")
-        let halfwayFilledStar = #imageLiteral(resourceName: "halfwayFilledStar")
-        let filledStar = #imageLiteral(resourceName: "filledStar")
+        let emptyStar = UIImage(named: "icon_star_empty" )
+        let halfwayFilledStar = UIImage(named: "icon_star_filled" )
+        let filledStar = UIImage(named: "icon_star_half" )
         
         //iterate buttons
         for (index, button) in ratingButtons.enumerated() {

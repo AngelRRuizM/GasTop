@@ -37,7 +37,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </stackView>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" text="Comentarios de gasolinera" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="XVC-88-d4p">
-                                        <rect key="frame" x="0.0" y="91.5" width="375" height="64.5"/>
+                                        <rect key="frame" x="19" y="91.5" width="337.5" height="64.5"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -111,7 +111,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="kt2-1f-5ms">
-                                        <rect key="frame" x="47" y="232" width="281" height="102.5"/>
+                                        <rect key="frame" x="47" y="232" width="281" height="103"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Servicios" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WUt-ia-T3F">
                                                 <rect key="frame" x="0.0" y="0.0" width="281" height="20.5"/>
@@ -120,7 +120,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="5Vt-nC-8Py" customClass="RatingControl" customModule="GasTop" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="20.5" width="281" height="30.5"/>
+                                                <rect key="frame" x="0.0" y="20.5" width="281" height="31"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="starCount">
                                                         <integer key="value" value="5"/>
@@ -128,7 +128,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </stackView>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Comentarios..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="6hg-RY-wab">
-                                                <rect key="frame" x="0.0" y="51" width="281" height="51.5"/>
+                                                <rect key="frame" x="0.0" y="51.5" width="281" height="51.5"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -137,14 +137,14 @@
                                         <constraints>
                                             <constraint firstItem="WUt-ia-T3F" firstAttribute="width" secondItem="kt2-1f-5ms" secondAttribute="width" id="1aj-pB-dgs"/>
                                             <constraint firstItem="WUt-ia-T3F" firstAttribute="height" secondItem="kt2-1f-5ms" secondAttribute="height" multiplier="0.2" id="Kzx-fr-Bbz"/>
-                                            <constraint firstItem="5Vt-nC-8Py" firstAttribute="width" secondItem="kt2-1f-5ms" secondAttribute="width" id="USJ-vG-xDC"/>
+                                            <constraint firstItem="5Vt-nC-8Py" firstAttribute="width" secondItem="kt2-1f-5ms" secondAttribute="width" multiplier="0.85" id="USJ-vG-xDC"/>
                                             <constraint firstItem="5Vt-nC-8Py" firstAttribute="height" secondItem="kt2-1f-5ms" secondAttribute="height" multiplier="0.3" id="bsy-Ru-XsH"/>
                                             <constraint firstItem="6hg-RY-wab" firstAttribute="height" secondItem="kt2-1f-5ms" secondAttribute="height" multiplier="0.5" id="qav-xZ-Tce"/>
-                                            <constraint firstItem="6hg-RY-wab" firstAttribute="width" secondItem="kt2-1f-5ms" secondAttribute="width" id="yjw-L5-dW8"/>
+                                            <constraint firstItem="6hg-RY-wab" firstAttribute="width" secondItem="kt2-1f-5ms" secondAttribute="width" multiplier="0.8" id="yjw-L5-dW8"/>
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Csz-CL-Cxd">
-                                        <rect key="frame" x="47" y="342.5" width="281" height="130"/>
+                                        <rect key="frame" x="47" y="343" width="281" height="130"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tiempo de Atención" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FxC-KY-zMa">
                                                 <rect key="frame" x="0.0" y="0.0" width="281" height="26"/>
@@ -170,14 +170,14 @@
                                         <constraints>
                                             <constraint firstItem="VGf-zA-DCi" firstAttribute="height" secondItem="Csz-CL-Cxd" secondAttribute="height" multiplier="0.3" id="B3C-Bq-kNU"/>
                                             <constraint firstItem="FxC-KY-zMa" firstAttribute="height" secondItem="Csz-CL-Cxd" secondAttribute="height" multiplier="0.2" id="CYl-ua-rp4"/>
-                                            <constraint firstItem="kxZ-oS-rpi" firstAttribute="width" secondItem="Csz-CL-Cxd" secondAttribute="width" id="Jw6-d0-Yrq"/>
+                                            <constraint firstItem="kxZ-oS-rpi" firstAttribute="width" secondItem="Csz-CL-Cxd" secondAttribute="width" multiplier="0.8" id="Jw6-d0-Yrq"/>
                                             <constraint firstItem="kxZ-oS-rpi" firstAttribute="height" secondItem="Csz-CL-Cxd" secondAttribute="height" multiplier="0.5" id="YgJ-d3-m6t"/>
                                             <constraint firstItem="FxC-KY-zMa" firstAttribute="width" secondItem="Csz-CL-Cxd" secondAttribute="width" id="eQU-jT-erE"/>
-                                            <constraint firstItem="VGf-zA-DCi" firstAttribute="width" secondItem="Csz-CL-Cxd" secondAttribute="width" id="nzY-wF-Wjx"/>
+                                            <constraint firstItem="VGf-zA-DCi" firstAttribute="width" secondItem="Csz-CL-Cxd" secondAttribute="width" multiplier="0.85" id="nzY-wF-Wjx"/>
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="eKs-Pe-ugY">
-                                        <rect key="frame" x="47" y="480.5" width="281" height="166.5"/>
+                                        <rect key="frame" x="47" y="481" width="281" height="166"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calidad de Gasolina" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Epy-x8-fUV">
                                                 <rect key="frame" x="0.0" y="0.0" width="281" height="33"/>
@@ -194,16 +194,16 @@
                                                 </userDefinedRuntimeAttributes>
                                             </stackView>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Comentarios..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Ss8-Nu-eDW">
-                                                <rect key="frame" x="0.0" y="83" width="281" height="83.5"/>
+                                                <rect key="frame" x="0.0" y="83" width="281" height="83"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="U3X-q0-40u" firstAttribute="width" secondItem="eKs-Pe-ugY" secondAttribute="width" id="1og-M5-WWn"/>
+                                            <constraint firstItem="U3X-q0-40u" firstAttribute="width" secondItem="eKs-Pe-ugY" secondAttribute="width" multiplier="0.85" id="1og-M5-WWn"/>
                                             <constraint firstItem="Epy-x8-fUV" firstAttribute="width" secondItem="eKs-Pe-ugY" secondAttribute="width" id="607-tC-pzN"/>
-                                            <constraint firstItem="Ss8-Nu-eDW" firstAttribute="width" secondItem="eKs-Pe-ugY" secondAttribute="width" id="Aif-33-adq"/>
+                                            <constraint firstItem="Ss8-Nu-eDW" firstAttribute="width" secondItem="eKs-Pe-ugY" secondAttribute="width" multiplier="0.8" id="Aif-33-adq"/>
                                             <constraint firstItem="Epy-x8-fUV" firstAttribute="height" secondItem="eKs-Pe-ugY" secondAttribute="height" multiplier="0.2" id="tu2-gm-Pcb"/>
                                             <constraint firstItem="Ss8-Nu-eDW" firstAttribute="height" secondItem="eKs-Pe-ugY" secondAttribute="height" multiplier="0.5" id="wGl-my-s9k"/>
                                             <constraint firstItem="U3X-q0-40u" firstAttribute="height" secondItem="eKs-Pe-ugY" secondAttribute="height" multiplier="0.3" id="yPH-kB-hzo"/>
@@ -216,6 +216,7 @@
                                     <constraint firstItem="Ohb-Z5-OeL" firstAttribute="width" secondItem="mLx-MJ-5DP" secondAttribute="width" multiplier="0.3" id="PET-F1-Eo8"/>
                                     <constraint firstItem="wKh-25-K4H" firstAttribute="width" secondItem="mLx-MJ-5DP" secondAttribute="width" multiplier="0.75" id="XS4-b6-lbd"/>
                                     <constraint firstItem="XVC-88-d4p" firstAttribute="width" secondItem="mLx-MJ-5DP" secondAttribute="width" multiplier="0.9" id="bpQ-Pq-94k"/>
+                                    <constraint firstItem="wKh-25-K4H" firstAttribute="top" secondItem="Ohb-Z5-OeL" secondAttribute="bottom" constant="8" id="eoh-lo-yD2"/>
                                 </constraints>
                             </stackView>
                         </subviews>
@@ -236,21 +237,26 @@
         <!--Mapa-->
         <scene sceneID="zsV-Lo-BAe">
             <objects>
-                <viewController storyboardIdentifier="MapScene" id="kNa-nS-nfO" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MapScene" id="kNa-nS-nfO" customClass="MapViewController" customModule="GasTop" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bcB-BD-rO8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="SoH-0r-vBp">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="map" translatesAutoresizingMaskIntoConstraints="NO" id="5us-Gs-5lh">
                                 <rect key="frame" x="0.0" y="20" width="375" height="598"/>
-                            </mapView>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W8f-Z2-EVt">
+                                <rect key="frame" x="243" y="266" width="39" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="icon_gas_station"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="SoH-0r-vBp" firstAttribute="centerX" secondItem="o6q-fg-kxN" secondAttribute="centerX" id="03B-Ra-rtW"/>
-                            <constraint firstItem="SoH-0r-vBp" firstAttribute="height" secondItem="o6q-fg-kxN" secondAttribute="height" id="iVN-9c-EZb"/>
-                            <constraint firstItem="SoH-0r-vBp" firstAttribute="centerY" secondItem="o6q-fg-kxN" secondAttribute="centerY" id="k32-sj-o8C"/>
-                            <constraint firstItem="SoH-0r-vBp" firstAttribute="width" secondItem="o6q-fg-kxN" secondAttribute="width" id="p1A-8B-bPC"/>
+                            <constraint firstItem="5us-Gs-5lh" firstAttribute="width" secondItem="o6q-fg-kxN" secondAttribute="width" id="hOc-EZ-QtN"/>
+                            <constraint firstItem="5us-Gs-5lh" firstAttribute="centerX" secondItem="o6q-fg-kxN" secondAttribute="centerX" id="iar-Y8-mJU"/>
+                            <constraint firstItem="5us-Gs-5lh" firstAttribute="height" secondItem="o6q-fg-kxN" secondAttribute="height" id="vK3-Ux-Y7Q"/>
+                            <constraint firstItem="5us-Gs-5lh" firstAttribute="centerY" secondItem="o6q-fg-kxN" secondAttribute="centerY" id="yrP-DJ-i6Q"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="o6q-fg-kxN"/>
                     </view>
@@ -286,12 +292,12 @@
         <!--Configuración-->
         <scene sceneID="0rj-RK-Tc6">
             <objects>
-                <viewController storyboardIdentifier="ConfigurationScene" id="dcf-SU-G3Q" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ConfigurationScene" id="dcf-SU-G3Q" customClass="ConfigurationViewController" customModule="GasTop" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Mvs-ZX-3mI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FO6-lD-niv">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_user_config" translatesAutoresizingMaskIntoConstraints="NO" id="FO6-lD-niv">
                                 <rect key="frame" x="124" y="50" width="127" height="126.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="FO6-lD-niv" secondAttribute="height" multiplier="1:1" id="atD-Wt-cs2"/>
@@ -372,15 +378,26 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Configuración" id="f6z-vF-hRc"/>
                     <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <segue destination="06e-L0-ydS" kind="show" id="08e-n2-scR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Ln-ar-CYq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-535.20000000000005" y="-166.8665667166417"/>
         </scene>
+        <!--LoginScene-->
+        <scene sceneID="KM7-iV-NZE">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" referencedIdentifier="LoginScene" id="06e-L0-ydS" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hsP-2J-MX8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="79" y="-136"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="ucJ-SN-O0V">
             <objects>
-                <navigationController id="6o5-dW-ufM" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="MainNavController" id="6o5-dW-ufM" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="9uD-0Y-A0O">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -402,4 +419,9 @@
             <point key="canvasLocation" x="169" y="-850"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="icon_gas_station" width="39" height="39"/>
+        <image name="icon_user_config" width="75" height="75"/>
+        <image name="map" width="750" height="1167"/>
+    </resources>
 </document>

@@ -19,6 +19,8 @@
 		FB6065AA21691141004DCE97 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB6065A921691141004DCE97 /* Assets.xcassets */; };
 		FB6065AD21691141004DCE97 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB6065AB21691141004DCE97 /* LaunchScreen.storyboard */; };
 		FB6065B521691433004DCE97 /* Secondary.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB6065B421691433004DCE97 /* Secondary.storyboard */; };
+		FBE85D4E217CF59800D2322C /* ConfigurationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE85D4D217CF59800D2322C /* ConfigurationViewController.swift */; };
+		FBE85D50217D284700D2322C /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE85D4F217D284700D2322C /* MapViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		FB6065AC21691141004DCE97 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FB6065AE21691141004DCE97 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FB6065B421691433004DCE97 /* Secondary.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Secondary.storyboard; sourceTree = "<group>"; };
+		FBE85D4D217CF59800D2322C /* ConfigurationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationViewController.swift; sourceTree = "<group>"; };
+		FBE85D4F217D284700D2322C /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +85,8 @@
 				FB524FCE21693A570049508C /* HTTPHandler.swift */,
 				FB524FD021693B0B0049508C /* ExtensionURLRequest.swift */,
 				FB5D978F217BF2E000154835 /* RatingControl.swift */,
+				FBE85D4D217CF59800D2322C /* ConfigurationViewController.swift */,
+				FBE85D4F217D284700D2322C /* MapViewController.swift */,
 			);
 			path = GasTop;
 			sourceTree = "<group>";
@@ -160,8 +166,10 @@
 				FB524FCD216935790049508C /* Review.swift in Sources */,
 				FB524FCB21692DA90049508C /* GasStation.swift in Sources */,
 				FB6065A52169113C004DCE97 /* LogInViewController.swift in Sources */,
+				FBE85D50217D284700D2322C /* MapViewController.swift in Sources */,
 				FB524FD121693B0B0049508C /* ExtensionURLRequest.swift in Sources */,
 				FB6065A32169113C004DCE97 /* AppDelegate.swift in Sources */,
+				FBE85D4E217CF59800D2322C /* ConfigurationViewController.swift in Sources */,
 				FB5D9790217BF2E000154835 /* RatingControl.swift in Sources */,
 				FB524FCF21693A570049508C /* HTTPHandler.swift in Sources */,
 				FB524FC921692C470049508C /* User.swift in Sources */,
