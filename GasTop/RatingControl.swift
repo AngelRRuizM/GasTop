@@ -20,7 +20,11 @@ class RatingControl: UIStackView {
             updateButtonSelectionStates()
         }
     }
-    
+    @IBInspectable public var editable: Bool = false {
+        didSet {
+            setupButtons();
+        }
+    }
     @IBInspectable var starCount: Int = 5 {
         didSet {
             setupButtons()
@@ -38,12 +42,18 @@ class RatingControl: UIStackView {
     required init(coder: NSCoder) {
         super.init(coder: coder)
         //fatalError("init(coder:) has not been implemented")
+        editable = false;
         setupButtons()
     }
     
     //MARK: Button Action
     
     @objc func ratingButtonTapped(button: UIButton) {
+        
+        if (!editable) {
+            return;
+        }
+        
         guard let index = ratingButtons.index(of: button) else {
             fatalError("The button, \(button), is not in the ratingButtons array: \(ratingButtons)")
         }
@@ -66,10 +76,12 @@ class RatingControl: UIStackView {
     //MARK: Private Methods
     private func resetHighlightedImg(forButton button: UIButton)
     {
-        button.setImage(#imageLiteral(resourceName: "highlightedStar"), for: .highlighted)
-        button.setImage(#imageLiteral(resourceName: "highlightedStar"), for: [.highlighted, .selected])
+        button.adjustsImageWhenHighlighted = editable
+        let highlightImg = UIImage(named: "icons_star_filled_highlighted")
+        button.setImage(highlightImg, for: .highlighted)
+        button.setImage(highlightImg, for: [.highlighted, .selected])
     }
-    
+
     
     private func setupButtons() {
         
@@ -82,7 +94,7 @@ class RatingControl: UIStackView {
         
         for _ in 0..<starCount {
             // Create the button
-            let button = UIButton()
+            let button = UIButton(type: .custom);
             
             // Set the button highlighted image
             resetHighlightedImg(forButton: button)
@@ -117,8 +129,8 @@ class RatingControl: UIStackView {
         
         //References to images
         let emptyStar = UIImage(named: "icon_star_empty" )
-        let halfwayFilledStar = UIImage(named: "icon_star_filled" )
-        let filledStar = UIImage(named: "icon_star_half" )
+        let halfwayFilledStar = UIImage(named: "icon_star_half" )
+        let filledStar = UIImage(named: "icon_star_filled" )
         
         //iterate buttons
         for (index, button) in ratingButtons.enumerated() {
