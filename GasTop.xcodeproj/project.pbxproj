@@ -12,6 +12,7 @@
 		FB524FCD216935790049508C /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB524FCC216935790049508C /* Review.swift */; };
 		FB524FCF21693A570049508C /* HTTPHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB524FCE21693A570049508C /* HTTPHandler.swift */; };
 		FB524FD121693B0B0049508C /* ExtensionURLRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB524FD021693B0B0049508C /* ExtensionURLRequest.swift */; };
+		FB5D9790217BF2E000154835 /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5D978F217BF2E000154835 /* RatingControl.swift */; };
 		FB6065A32169113C004DCE97 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6065A22169113C004DCE97 /* AppDelegate.swift */; };
 		FB6065A52169113C004DCE97 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6065A42169113C004DCE97 /* LogInViewController.swift */; };
 		FB6065A82169113C004DCE97 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB6065A62169113C004DCE97 /* Main.storyboard */; };
@@ -26,6 +27,7 @@
 		FB524FCC216935790049508C /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		FB524FCE21693A570049508C /* HTTPHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPHandler.swift; sourceTree = "<group>"; };
 		FB524FD021693B0B0049508C /* ExtensionURLRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionURLRequest.swift; sourceTree = "<group>"; };
+		FB5D978F217BF2E000154835 /* RatingControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; };
 		FB60659F2169113C004DCE97 /* GasTop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GasTop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB6065A22169113C004DCE97 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FB6065A42169113C004DCE97 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 				FB524FCC216935790049508C /* Review.swift */,
 				FB524FCE21693A570049508C /* HTTPHandler.swift */,
 				FB524FD021693B0B0049508C /* ExtensionURLRequest.swift */,
+				FB5D978F217BF2E000154835 /* RatingControl.swift */,
 			);
 			path = GasTop;
 			sourceTree = "<group>";
@@ -159,6 +162,7 @@
 				FB6065A52169113C004DCE97 /* LogInViewController.swift in Sources */,
 				FB524FD121693B0B0049508C /* ExtensionURLRequest.swift in Sources */,
 				FB6065A32169113C004DCE97 /* AppDelegate.swift in Sources */,
+				FB5D9790217BF2E000154835 /* RatingControl.swift in Sources */,
 				FB524FCF21693A570049508C /* HTTPHandler.swift in Sources */,
 				FB524FC921692C470049508C /* User.swift in Sources */,
 			);

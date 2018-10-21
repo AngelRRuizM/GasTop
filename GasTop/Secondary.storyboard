@@ -1,7 +1,63 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13142" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12042"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <scenes/>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="0rj-RK-Tc6">
+            <objects>
+                <viewController id="dcf-SU-G3Q" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Mvs-ZX-3mI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FO6-lD-niv">
+                                <rect key="frame" x="108.5" y="80" width="158" height="158"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="FO6-lD-niv" secondAttribute="height" multiplier="1:1" id="atD-Wt-cs2"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="eO6-lL-b2z">
+                                <rect key="frame" x="9.5" y="262" width="356" height="66.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nombre de usuario" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MDY-Yo-VYW">
+                                        <rect key="frame" x="0.0" y="0.0" width="178" height="66.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dqx-yI-i6s">
+                                        <rect key="frame" x="178" y="0.0" width="178" height="66.5"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="FO6-lD-niv" firstAttribute="centerX" secondItem="aM7-c2-SSI" secondAttribute="centerX" id="1Re-7S-F8J"/>
+                            <constraint firstItem="eO6-lL-b2z" firstAttribute="width" secondItem="Mvs-ZX-3mI" secondAttribute="width" multiplier="0.95" id="5QQ-Ug-CUh"/>
+                            <constraint firstItem="eO6-lL-b2z" firstAttribute="centerX" secondItem="FO6-lD-niv" secondAttribute="centerX" id="GMy-5U-hYB"/>
+                            <constraint firstItem="eO6-lL-b2z" firstAttribute="top" secondItem="FO6-lD-niv" secondAttribute="bottom" multiplier="1.1" id="M5O-78-ciZ"/>
+                            <constraint firstItem="FO6-lD-niv" firstAttribute="top" secondItem="aM7-c2-SSI" secondAttribute="top" multiplier="4" id="Wde-MH-06x"/>
+                            <constraint firstItem="eO6-lL-b2z" firstAttribute="height" secondItem="Mvs-ZX-3mI" secondAttribute="height" multiplier="0.1" id="YCr-1N-OmZ"/>
+                            <constraint firstItem="aM7-c2-SSI" firstAttribute="bottom" secondItem="FO6-lD-niv" secondAttribute="bottom" multiplier="2.8" id="ovN-5u-FsT"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="aM7-c2-SSI"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Ln-ar-CYq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="82.400000000000006" y="-207.34632683658174"/>
+        </scene>
+    </scenes>
 </document>
