@@ -20,11 +20,7 @@ class RatingControl: UIStackView {
             updateButtonSelectionStates()
         }
     }
-    @IBInspectable public var editable: Bool = false {
-        didSet {
-            setupButtons();
-        }
-    }
+    @IBInspectable public var editable: Bool = true
     @IBInspectable var starCount: Int = 5 {
         didSet {
             setupButtons()
@@ -42,7 +38,6 @@ class RatingControl: UIStackView {
     required init(coder: NSCoder) {
         super.init(coder: coder)
         //fatalError("init(coder:) has not been implemented")
-        editable = false;
         setupButtons()
     }
     

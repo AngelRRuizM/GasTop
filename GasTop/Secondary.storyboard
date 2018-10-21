@@ -11,10 +11,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Review View Controller-->
         <scene sceneID="9Db-1s-9wa">
             <objects>
-                <viewController storyboardIdentifier="ReviewScene" id="2O7-io-zr6" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ReviewScene" id="2O7-io-zr6" customClass="ReviewViewController" customModule="GasTop" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="11l-hM-tfH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -52,7 +52,7 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="107" height="30"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Magna" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UzC-dF-mbW">
                                                         <rect key="frame" x="0.0" y="30" width="107" height="30"/>
@@ -73,7 +73,7 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="107" height="30"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Premium" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p5q-hR-ucM">
                                                         <rect key="frame" x="0.0" y="30" width="107" height="30"/>
@@ -94,7 +94,7 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="107.5" height="30"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Diesel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mny-07-qtr">
                                                         <rect key="frame" x="0.0" y="30" width="107.5" height="30"/>
@@ -229,10 +229,22 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="TDE-DK-U8u"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Htb-eA-9PB">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="D7w-Bj-g60">
+                            <connections>
+                                <action selector="cancel:" destination="2O7-io-zr6" id="cLG-3L-d6a"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="Fg4-ik-Foh">
+                            <connections>
+                                <action selector="save:" destination="2O7-io-zr6" id="dga-pW-vIz"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NfY-oD-Iez" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1447.2" y="-1544.0779610194904"/>
+            <point key="canvasLocation" x="-740" y="-1454.1229385307347"/>
         </scene>
         <!--Mapa-->
         <scene sceneID="zsV-Lo-BAe">
@@ -271,7 +283,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gLX-6A-aXC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-535.20000000000005" y="-849.62518740629696"/>
+            <point key="canvasLocation" x="239" y="-776"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="82k-Hz-Nxt">
@@ -300,12 +312,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_user_config" translatesAutoresizingMaskIntoConstraints="NO" id="FO6-lD-niv">
-                                <rect key="frame" x="124" y="50" width="127" height="126.5"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="FO6-lD-niv" secondAttribute="height" multiplier="1:1" id="atD-Wt-cs2"/>
-                                </constraints>
-                            </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="eO6-lL-b2z">
                                 <rect key="frame" x="9.5" y="194" width="356" height="67"/>
                                 <subviews>
@@ -362,6 +368,12 @@
                                     <action selector="Logout:" destination="dcf-SU-G3Q" eventType="touchUpInside" id="IfS-ts-GZc"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_user_config" translatesAutoresizingMaskIntoConstraints="NO" id="FO6-lD-niv">
+                                <rect key="frame" x="124" y="50" width="127" height="126.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="FO6-lD-niv" secondAttribute="height" multiplier="1:1" id="atD-Wt-cs2"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -385,9 +397,6 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Configuración" id="f6z-vF-hRc"/>
                     <nil key="simulatedTopBarMetrics"/>
-                    <connections>
-                        <segue destination="06e-L0-ydS" kind="show" identifier="toLogin" id="08e-n2-scR"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Ln-ar-CYq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -423,7 +432,7 @@
                 <viewControllerPlaceholder storyboardName="Main" referencedIdentifier="GasStationScene" id="4nk-AC-Nqt" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PLF-4a-CWh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="169" y="-850"/>
+            <point key="canvasLocation" x="998" y="-720"/>
         </scene>
     </scenes>
     <resources>

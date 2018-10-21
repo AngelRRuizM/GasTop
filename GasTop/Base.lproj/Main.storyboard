@@ -77,7 +77,7 @@
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="47.226386806596707"/>
         </scene>
-        <!--View Controller-->
+        <!--Gasolinera Ruiz-->
         <scene sceneID="vL4-0l-Wur">
             <objects>
                 <viewController storyboardIdentifier="GasStationScene" id="eVn-Az-A0q" sceneMemberID="viewController">
@@ -186,7 +186,7 @@
                                                     <userDefinedRuntimeAttribute type="number" keyPath="starCount">
                                                         <integer key="value" value="5"/>
                                                     </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="editable" value="YES"/>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="editable" value="NO"/>
                                                 </userDefinedRuntimeAttributes>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xyv-60-pKw">
@@ -311,10 +311,17 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="X5D-Dv-Ahd"/>
                     </view>
-                    <navigationItem key="navigationItem" id="IdP-Ic-xGz"/>
-                    <connections>
-                        <segue destination="XhE-y4-dRu" kind="show" id="FPr-pw-0sQ"/>
-                    </connections>
+                    <navigationItem key="navigationItem" title="Gasolinera Ruiz" id="dpz-Z7-1iq">
+                        <barButtonItem key="backBarButtonItem" title="Atrás" id="oGl-PG-cz0"/>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="add" id="BZW-wr-YLy">
+                                <connections>
+                                    <segue destination="XhE-y4-dRu" kind="show" id="LKY-lV-MFZ"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem image="icon_heart_filled" id="slS-bu-Hgj"/>
+                        </rightBarButtonItems>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wmg-dm-TEw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -334,10 +341,11 @@
                 <viewControllerPlaceholder storyboardName="Secondary" referencedIdentifier="ReviewScene" id="XhE-y4-dRu" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pm9-B6-CwW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3601" y="-219"/>
+            <point key="canvasLocation" x="3715" y="-184"/>
         </scene>
     </scenes>
     <resources>
+        <image name="icon_heart_filled" width="33.75" height="33.75"/>
         <image name="logo1" width="1280" height="1280"/>
     </resources>
 </document>

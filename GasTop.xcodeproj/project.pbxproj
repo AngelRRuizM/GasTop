@@ -21,6 +21,7 @@
 		FB6065B521691433004DCE97 /* Secondary.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB6065B421691433004DCE97 /* Secondary.storyboard */; };
 		FBE85D4E217CF59800D2322C /* ConfigurationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE85D4D217CF59800D2322C /* ConfigurationViewController.swift */; };
 		FBE85D50217D284700D2322C /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE85D4F217D284700D2322C /* MapViewController.swift */; };
+		FBE85D52217D42FA00D2322C /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE85D51217D42FA00D2322C /* ReviewViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		FB6065B421691433004DCE97 /* Secondary.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Secondary.storyboard; sourceTree = "<group>"; };
 		FBE85D4D217CF59800D2322C /* ConfigurationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationViewController.swift; sourceTree = "<group>"; };
 		FBE85D4F217D284700D2322C /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		FBE85D51217D42FA00D2322C /* ReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 				FB5D978F217BF2E000154835 /* RatingControl.swift */,
 				FBE85D4D217CF59800D2322C /* ConfigurationViewController.swift */,
 				FBE85D4F217D284700D2322C /* MapViewController.swift */,
+				FBE85D51217D42FA00D2322C /* ReviewViewController.swift */,
 			);
 			path = GasTop;
 			sourceTree = "<group>";
@@ -170,6 +173,7 @@
 				FB524FD121693B0B0049508C /* ExtensionURLRequest.swift in Sources */,
 				FB6065A32169113C004DCE97 /* AppDelegate.swift in Sources */,
 				FBE85D4E217CF59800D2322C /* ConfigurationViewController.swift in Sources */,
+				FBE85D52217D42FA00D2322C /* ReviewViewController.swift in Sources */,
 				FB5D9790217BF2E000154835 /* RatingControl.swift in Sources */,
 				FB524FCF21693A570049508C /* HTTPHandler.swift in Sources */,
 				FB524FC921692C470049508C /* User.swift in Sources */,
@@ -317,6 +321,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BA75AATBD3;
 				INFOPLIST_FILE = GasTop/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -334,6 +339,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BA75AATBD3;
 				INFOPLIST_FILE = GasTop/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
