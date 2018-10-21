@@ -8,7 +8,7 @@
 
 import Foundation
 
-class GasStation: Codable
+class Review: Codable
 {
     var id: Int;
     var byUser: Int;
@@ -28,7 +28,7 @@ class GasStation: Codable
     var gasScore: Float?;
     var gasComment: String?;
 
-    init (id: Int byUser: Int, forGasStation: Int, date: Date, generalScore: Float, generalComment: String?, magnaPrice: Float?,premiumPrice: Float?, dieselPrice: Float?, serviceScore: Float?, serviceComment: String?, timeScore: Float?, timeComment: String?, gasScore: Float?, gasComment: String?) {
+    init (id: Int, byUser: Int, forGasStation: Int, date: Date, generalScore: Float, generalComment: String?, magnaPrice: Float?,premiumPrice: Float?, dieselPrice: Float?, serviceScore: Float?, serviceComment: String?, timeScore: Float?, timeComment: String?, gasScore: Float?, gasComment: String?) {
 
         self.id = id;
         self.byUser = byUser;
