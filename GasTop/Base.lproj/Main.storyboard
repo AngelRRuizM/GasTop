@@ -27,7 +27,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" textContentType="username"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Contraseña" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JWa-QU-kUI">
+                            <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Contraseña" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JWa-QU-kUI">
                                 <rect key="frame" x="114.5" y="425.5" width="146" height="34.5"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -48,6 +48,7 @@
                                 <state key="normal" title="Iniciar Sesión"/>
                                 <connections>
                                     <action selector="logIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MmH-CV-BHC"/>
+                                    <action selector="login:" destination="BYZ-38-t0r" eventType="touchUpInside" id="V9o-0d-bYu"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -70,6 +71,8 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="password" destination="JWa-QU-kUI" id="eV5-xw-Ghh"/>
+                        <outlet property="userMail" destination="UWb-I4-Osk" id="ZIE-Ds-kdR"/>
                         <segue destination="7ce-HB-o0N" kind="show" identifier="toTabBar" id="IwI-AU-jBC"/>
                     </connections>
                 </viewController>
