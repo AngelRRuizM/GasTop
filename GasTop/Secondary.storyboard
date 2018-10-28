@@ -120,7 +120,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="5Vt-nC-8Py" customClass="RatingControl" customModule="GasTop" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="20.5" width="281" height="31"/>
+                                                <rect key="frame" x="21" y="20.5" width="239" height="31"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="starCount">
                                                         <integer key="value" value="5"/>
@@ -128,7 +128,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </stackView>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Comentarios..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="6hg-RY-wab">
-                                                <rect key="frame" x="0.0" y="51.5" width="281" height="51.5"/>
+                                                <rect key="frame" x="28" y="51.5" width="225" height="51.5"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -144,16 +144,16 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Csz-CL-Cxd">
-                                        <rect key="frame" x="47" y="343" width="281" height="130"/>
+                                        <rect key="frame" x="12" y="343" width="351" height="130"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tiempo de Atención" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FxC-KY-zMa">
-                                                <rect key="frame" x="0.0" y="0.0" width="281" height="26"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="351" height="26"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="VGf-zA-DCi" customClass="RatingControl" customModule="GasTop" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="26" width="281" height="39"/>
+                                                <rect key="frame" x="26" y="26" width="299" height="39"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="starCount">
                                                         <integer key="value" value="5"/>
@@ -161,7 +161,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </stackView>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Comentarios..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="kxZ-oS-rpi">
-                                                <rect key="frame" x="0.0" y="65" width="281" height="65"/>
+                                                <rect key="frame" x="35" y="65" width="281" height="65"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -177,16 +177,16 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="eKs-Pe-ugY">
-                                        <rect key="frame" x="47" y="481" width="281" height="166"/>
+                                        <rect key="frame" x="12" y="481" width="351" height="166"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calidad de Gasolina" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Epy-x8-fUV">
-                                                <rect key="frame" x="0.0" y="0.0" width="281" height="33"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="351" height="33"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="U3X-q0-40u" customClass="RatingControl" customModule="GasTop" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="33" width="281" height="50"/>
+                                                <rect key="frame" x="26" y="33" width="299" height="50"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="starCount">
                                                         <integer key="value" value="5"/>
@@ -194,7 +194,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </stackView>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Comentarios..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Ss8-Nu-eDW">
-                                                <rect key="frame" x="0.0" y="83" width="281" height="83"/>
+                                                <rect key="frame" x="35" y="83" width="281" height="83"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -254,30 +254,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="map" translatesAutoresizingMaskIntoConstraints="NO" id="5us-Gs-5lh">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ozv-41-lmy">
                                 <rect key="frame" x="0.0" y="20" width="375" height="598"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W8f-Z2-EVt">
-                                <rect key="frame" x="243" y="266" width="39" height="39"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="icon_gas_station"/>
-                                <connections>
-                                    <segue destination="4nk-AC-Nqt" kind="show" id="dOe-7M-RV4"/>
-                                </connections>
-                            </button>
+                            </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="5us-Gs-5lh" firstAttribute="width" secondItem="o6q-fg-kxN" secondAttribute="width" id="hOc-EZ-QtN"/>
-                            <constraint firstItem="5us-Gs-5lh" firstAttribute="centerX" secondItem="o6q-fg-kxN" secondAttribute="centerX" id="iar-Y8-mJU"/>
-                            <constraint firstItem="5us-Gs-5lh" firstAttribute="height" secondItem="o6q-fg-kxN" secondAttribute="height" id="vK3-Ux-Y7Q"/>
-                            <constraint firstItem="5us-Gs-5lh" firstAttribute="centerY" secondItem="o6q-fg-kxN" secondAttribute="centerY" id="yrP-DJ-i6Q"/>
+                            <constraint firstItem="ozv-41-lmy" firstAttribute="centerY" secondItem="o6q-fg-kxN" secondAttribute="centerY" id="K7d-rO-45a"/>
+                            <constraint firstItem="ozv-41-lmy" firstAttribute="width" secondItem="o6q-fg-kxN" secondAttribute="width" id="loE-te-vHs"/>
+                            <constraint firstItem="ozv-41-lmy" firstAttribute="centerX" secondItem="o6q-fg-kxN" secondAttribute="centerX" id="tIm-gE-dNN"/>
+                            <constraint firstItem="ozv-41-lmy" firstAttribute="height" secondItem="o6q-fg-kxN" secondAttribute="height" id="zkp-wm-Yq6"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="o6q-fg-kxN"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Mapa" id="0Ah-Wx-J3O"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
+                        <outlet property="map" destination="ozv-41-lmy" id="HZr-Em-dTW"/>
                         <segue destination="4nk-AC-Nqt" kind="show" id="jxF-OG-eRt"/>
                     </connections>
                 </viewController>
@@ -436,11 +429,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="icon_gas_station" width="39" height="39"/>
         <image name="icon_user_config" width="75" height="75"/>
-        <image name="map" width="750" height="1167"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="jxF-OG-eRt"/>
-    </inferredMetricsTieBreakers>
 </document>

@@ -7,12 +7,30 @@
 //
 
 import UIKit
+import MapKit
 
-class MapViewController: UIViewController {
+class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
 
+    
+    @IBOutlet weak var map: MKMapView!
+    
+    var manager = CLLocationManager();
+    var currentUserLocation: CLLocationCoordinate2D?;
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        map.delegate = self;
+        manager.delegate = self;
+        
+        if manager.responds(to: #selector(CLLocationManager.requestWhenInUseAuthorization)) {
+            manager.requestWhenInUseAuthorization();
+        }
+    }
+    
+    func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
+        let region = MKCoordinateRegionMakeWithDistance(userLocation.coordinate, 700, 700);
+        map.setRegion(region, animated: true);
     }
     
     override func viewWillAppear(_ animated: Bool) {

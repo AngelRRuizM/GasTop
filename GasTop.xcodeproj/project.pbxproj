@@ -19,6 +19,7 @@
 		FB6065AA21691141004DCE97 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB6065A921691141004DCE97 /* Assets.xcassets */; };
 		FB6065AD21691141004DCE97 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB6065AB21691141004DCE97 /* LaunchScreen.storyboard */; };
 		FB6065B521691433004DCE97 /* Secondary.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB6065B421691433004DCE97 /* Secondary.storyboard */; };
+		FB6DB1BB21864A2300048539 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB6DB1BA21864A2300048539 /* MapKit.framework */; };
 		FBE85D4E217CF59800D2322C /* ConfigurationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE85D4D217CF59800D2322C /* ConfigurationViewController.swift */; };
 		FBE85D50217D284700D2322C /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE85D4F217D284700D2322C /* MapViewController.swift */; };
 		FBE85D52217D42FA00D2322C /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE85D51217D42FA00D2322C /* ReviewViewController.swift */; };
@@ -39,6 +40,7 @@
 		FB6065AC21691141004DCE97 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FB6065AE21691141004DCE97 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FB6065B421691433004DCE97 /* Secondary.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Secondary.storyboard; sourceTree = "<group>"; };
+		FB6DB1BA21864A2300048539 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		FBE85D4D217CF59800D2322C /* ConfigurationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationViewController.swift; sourceTree = "<group>"; };
 		FBE85D4F217D284700D2322C /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		FBE85D51217D42FA00D2322C /* ReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
@@ -49,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB6DB1BB21864A2300048539 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,6 +63,7 @@
 			children = (
 				FB6065A12169113C004DCE97 /* GasTop */,
 				FB6065A02169113C004DCE97 /* Products */,
+				FB6DB1B921864A2300048539 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -92,6 +96,14 @@
 				FBE85D51217D42FA00D2322C /* ReviewViewController.swift */,
 			);
 			path = GasTop;
+			sourceTree = "<group>";
+		};
+		FB6DB1B921864A2300048539 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FB6DB1BA21864A2300048539 /* MapKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
