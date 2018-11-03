@@ -14,6 +14,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     @IBOutlet weak var map: MKMapView!
     
     var manager = CLLocationManager();
+    var gasStations: [GasStation] = [];
     var currentUserLocation: CLLocationCoordinate2D?;
     
     override func viewDidLoad() {
@@ -24,11 +25,16 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         
         if manager.responds(to: #selector(CLLocationManager.requestWhenInUseAuthorization)) {
             manager.requestWhenInUseAuthorization();
+            
         }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
+        
+        getGasStations();
+        setGasStationAnnotations();
+        
         super.viewWillAppear(animated)
     }
     
@@ -42,6 +48,21 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
         let region = MKCoordinateRegionMakeWithDistance(userLocation.coordinate, 700, 700);
         map.setRegion(region, animated: true);
+    }
+    
+    //MARK: Map Data functions
+    func getGasStations() {
+        gasStations.removeAll();
+        
+        gasStations.append(contentsOf: GasStation.getExistingStations());
+    }
+    
+    func setGasStationAnnotations() {
+        map.removeAnnotations(map.annotations);
+        
+        for station in gasStations {
+            map.addAnnotation(station);
+        }
     }
     
     /*

@@ -14,6 +14,7 @@ enum GasStationKeys: String, CodingKey {
     case lat = "lat";
     case lng = "lng";
     case name = "name";
+    case address = "address"
     
     case totalMagnaPrice = "totalMagnaPrice";
     case totalPremiumPrice = "totalPremiumPrice";
@@ -38,6 +39,7 @@ class GasStation: NSObject, Codable, MKAnnotation
     var lat: Float;
     var lng: Float;
     var name: String;
+    var address: String;
     
     var totalMagnaPrice: Float;
     var totalPremiumPrice: Float;
@@ -58,6 +60,12 @@ class GasStation: NSObject, Codable, MKAnnotation
     
     //MARK: MKAnnotationProperties
     let coordinate: CLLocationCoordinate2D;
+    var title: String? {
+        return getMarkerSnippet();
+    }
+    var subtitle: String? {
+        return "";
+    }
     
     //Needed if coding a "complex" type (CLLocation) that does not conform to Codable
     required init(from decoder: Decoder) throws {        
@@ -67,6 +75,7 @@ class GasStation: NSObject, Codable, MKAnnotation
         self.lat = try container.decode(Float.self, forKey: .lat);
         self.lng = try container.decode(Float.self, forKey: .lng);
         self.name = try container.decode(String.self, forKey: .name);
+        self.address = try container.decode(String.self, forKey: .address);
         
         self.totalMagnaPrice = try container.decode(Float.self, forKey: .totalMagnaPrice);
         self.totalPremiumPrice = try container.decode(Float.self, forKey: .totalPremiumPrice);
@@ -94,6 +103,7 @@ class GasStation: NSObject, Codable, MKAnnotation
         try container.encode(lat, forKey: .lat);
         try container.encode(lng, forKey: .lng);
         try container.encode(name, forKey: .name);
+        try container.encode(address, forKey: .address);
         
         try container.encode(totalMagnaPrice, forKey: .totalMagnaPrice);
         try container.encode(totalPremiumPrice, forKey: .totalPremiumPrice);
@@ -113,12 +123,13 @@ class GasStation: NSObject, Codable, MKAnnotation
     }
     
     
-    init(id: Int, lat: Float, lng: Float, name: String, totalMagnaPrice: Float, totalPremiumPrice: Float, totalDieselPrice: Float, totalGeneralScore: Float, totalGasScore: Float, totalServiceScore: Float, totalTimeScore: Float, magnaPriceReviews: Int, premiumPriceReviews: Int, dieselPriceReviews: Int, generalScoreReviews: Int, gasScoreReviews: Int, serviceScoreReviews: Int, timeScoreReviews: Int) {
+    init(id: Int, lat: Float, lng: Float, name: String, address: String, totalMagnaPrice: Float, totalPremiumPrice: Float, totalDieselPrice: Float, totalGeneralScore: Float, totalGasScore: Float, totalServiceScore: Float, totalTimeScore: Float, magnaPriceReviews: Int, premiumPriceReviews: Int, dieselPriceReviews: Int, generalScoreReviews: Int, gasScoreReviews: Int, serviceScoreReviews: Int, timeScoreReviews: Int) {
 
         self.id =  id;
 		self.lat =  lat;
 		self.lng =  lng;
 		self.name =  name;
+        self.address = address;
 		
 		self.totalMagnaPrice =  totalMagnaPrice;
 		self.totalPremiumPrice = totalPremiumPrice;
@@ -179,5 +190,10 @@ class GasStation: NSObject, Codable, MKAnnotation
 		return timeScoreReviews == 0 ? 0 : totalTimeScore / Float(timeScoreReviews);
 	}
 
-	
+    static func getExistingStations() -> [GasStation] {
+        
+        let station = GasStation(id: 1, lat: 19.021575, lng: -98.243071, name: "Combustibles Cúmulo de Virgo, S.A. de C.V.", address: "1909, Atlixcáyotl, Reserva Territorial Atlixcáyotl, Corredor Comercial Desarrollo Atlixcayotl, 72830 Puebla, Pue.",totalMagnaPrice: 45, totalPremiumPrice: 30, totalDieselPrice: 49, totalGeneralScore: 9, totalGasScore: 10, totalServiceScore: 8, totalTimeScore: 8.5, magnaPriceReviews: 2, premiumPriceReviews: 2, dieselPriceReviews: 2, generalScoreReviews: 2, gasScoreReviews: 2, serviceScoreReviews: 2, timeScoreReviews: 2);
+        
+        return [station];
+    }
 }
