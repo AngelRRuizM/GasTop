@@ -37,6 +37,10 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
     }
 
     @IBAction func logIn(_ sender: Any) {
+        
+        self.performSegue(withIdentifier: "toTabBar", sender: self)
+        return;
+        
         if (userMail.text?.isEmpty)! || (password.text?.isEmpty)! {
             let message = "Proporcione correo y contraseña validos"
             alertFailure(message)
