@@ -50,6 +50,14 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         map.setRegion(region, animated: true);
     }
     
+    //Does segue to gas station details if the annotation selected is a GasStation
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        if let station = view.annotation as? GasStation {
+            self.performSegue(withIdentifier: "toGasStationDetails", sender: self)
+
+        }
+    }
+    
     //MARK: Map Data functions
     func getGasStations() {
         gasStations.removeAll();
