@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FB051469219898300043157F /* GasSationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB051468219898300043157F /* GasSationViewController.swift */; };
 		FB524FC921692C470049508C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB524FC821692C470049508C /* User.swift */; };
 		FB524FCB21692DA90049508C /* GasStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB524FCA21692DA90049508C /* GasStation.swift */; };
 		FB524FCD216935790049508C /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB524FCC216935790049508C /* Review.swift */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FB051468219898300043157F /* GasSationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GasSationViewController.swift; sourceTree = "<group>"; };
 		FB524FC821692C470049508C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		FB524FCA21692DA90049508C /* GasStation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GasStation.swift; sourceTree = "<group>"; };
 		FB524FCC216935790049508C /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 				FBE85D4D217CF59800D2322C /* ConfigurationViewController.swift */,
 				FBE85D4F217D284700D2322C /* MapViewController.swift */,
 				FBE85D51217D42FA00D2322C /* ReviewViewController.swift */,
+				FB051468219898300043157F /* GasSationViewController.swift */,
 			);
 			path = GasTop;
 			sourceTree = "<group>";
@@ -186,6 +189,7 @@
 				FB6065A32169113C004DCE97 /* AppDelegate.swift in Sources */,
 				FBE85D4E217CF59800D2322C /* ConfigurationViewController.swift in Sources */,
 				FBE85D52217D42FA00D2322C /* ReviewViewController.swift in Sources */,
+				FB051469219898300043157F /* GasSationViewController.swift in Sources */,
 				FB5D9790217BF2E000154835 /* RatingControl.swift in Sources */,
 				FB524FCF21693A570049508C /* HTTPHandler.swift in Sources */,
 				FB524FC921692C470049508C /* User.swift in Sources */,

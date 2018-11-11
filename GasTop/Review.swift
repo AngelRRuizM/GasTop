@@ -10,7 +10,7 @@ import Foundation
 
 class Review: Codable
 {
-    var id: Int;
+    var id: Int = -1;
     var byUser: Int;
     var forGasStation: Int;
     var date: Date;
@@ -47,5 +47,29 @@ class Review: Codable
         self.timeComment = timeComment;
         self.gasScore = gasScore;
         self.gasComment = gasComment;
+    }
+    
+    init (byUser: Int, forGasStation: Int, date: Date, generalScore: Float, generalComment: String?, magnaPrice: Float?,premiumPrice: Float?, dieselPrice: Float?, serviceScore: Float?, serviceComment: String?, timeScore: Float?, timeComment: String?, gasScore: Float?, gasComment: String?) {
+        
+        self.byUser = byUser;
+        self.forGasStation = forGasStation;
+        self.date = date;
+        
+        self.generalScore = generalScore;
+        self.generalComment = generalComment;
+        self.magnaPrice = magnaPrice;
+        self.premiumPrice = premiumPrice;
+        self.dieselPrice = dieselPrice;
+        
+        self.serviceScore = serviceScore;
+        self.serviceComment = serviceComment;
+        self.timeScore = timeScore;
+        self.timeComment = timeComment;
+        self.gasScore = gasScore;
+        self.gasComment = gasComment;
+    }
+    
+    static func createReview(_ review: Review) {
+        
     }
 }

@@ -53,7 +53,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     //Does segue to gas station details if the annotation selected is a GasStation
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
         if let station = view.annotation as? GasStation {
-            self.performSegue(withIdentifier: "toGasStationDetails", sender: self)
+            self.performSegue(withIdentifier: "toGasStationDetails", sender: station)
 
         }
     }
@@ -73,14 +73,21 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         }
     }
     
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        
+        if let targetVC = segue.destination as? GasSationViewController {
+            
+            guard let gasStation = (sender as Any) as? GasStation else {
+                fatalError("GasSation not passed correctly in segue as Sender");
+
+            }
+            targetVC.gasStationId = gasStation.id;
+        
+            targetVC.sceneMode = .View;
+        }
     }
-    */
 
 }

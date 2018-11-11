@@ -196,4 +196,8 @@ class GasStation: NSObject, Codable, MKAnnotation
         
         return [station];
     }
+    
+    static func getStation(withId id: Int) -> GasStation? {
+        return GasStation(id: 1, lat: 19.021575, lng: -98.243071, name: "Combustibles Cúmulo de Virgo, S.A. de C.V.", address: "1909, Atlixcáyotl, Reserva Territorial Atlixcáyotl, Corredor Comercial Desarrollo Atlixcayotl, 72830 Puebla, Pue.",totalMagnaPrice: 45, totalPremiumPrice: 30, totalDieselPrice: 49, totalGeneralScore: 9, totalGasScore: 10, totalServiceScore: 8, totalTimeScore: 8.5, magnaPriceReviews: 2, premiumPriceReviews: 2, dieselPriceReviews: 2, generalScoreReviews: 2, gasScoreReviews: 2, serviceScoreReviews: 2, timeScoreReviews: 2);
+    }
 }

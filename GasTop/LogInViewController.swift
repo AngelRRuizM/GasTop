@@ -13,9 +13,7 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var userMail: UITextField!
     
     @IBOutlet weak var password: UITextField!
-    
-    let userDefaults = UserDefaults.standard
-    
+        
     @IBAction func login(_ sender: UIButton) {
     }
     
@@ -44,7 +42,6 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
         if (userMail.text?.isEmpty)! || (password.text?.isEmpty)! {
             let message = "Proporcione correo y contraseña validos"
             alertFailure(message)
-            return
         }
         else{
             let mail = userMail.text
@@ -68,10 +65,7 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
                 
                 let user = array!.first!
                 //Hace set del email.
-                userDefaults.set(user.email, forKey: "email")
-                userDefaults.synchronize()
-                userDefaults.set(user.id, forKey: "id")
-                userDefaults.synchronize()
+                User.loginLocalUser(id: user.id, username: user.username, email: user.email);
                 //Como fue exitoso, pasa a la siguiente vista
                 self.performSegue(withIdentifier: "toTabBar", sender: self)
             }

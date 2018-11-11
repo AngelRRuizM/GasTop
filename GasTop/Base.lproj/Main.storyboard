@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -83,7 +83,7 @@
         <!--Gasolinera Ruiz-->
         <scene sceneID="vL4-0l-Wur">
             <objects>
-                <viewController storyboardIdentifier="GasStationScene" id="eVn-Az-A0q" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GasStationScene" id="eVn-Az-A0q" customClass="GasSationViewController" customModule="GasTop" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Uth-bA-Bj4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -121,7 +121,7 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="C6q-jc-m0u">
                                                         <rect key="frame" x="0.0" y="0.0" width="125" height="65"/>
                                                         <subviews>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cMB-QK-j35">
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cMB-QK-j35">
                                                                 <rect key="frame" x="0.0" y="0.0" width="125" height="32.5"/>
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -142,7 +142,7 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="qOV-os-Nlh">
                                                         <rect key="frame" x="125" y="0.0" width="125" height="65"/>
                                                         <subviews>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="p64-B2-WCL">
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="p64-B2-WCL">
                                                                 <rect key="frame" x="0.0" y="0.0" width="125" height="32.5"/>
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -163,7 +163,7 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="HXe-vC-4Si">
                                                         <rect key="frame" x="250" y="0.0" width="125" height="65"/>
                                                         <subviews>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h0a-XD-K5h">
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h0a-XD-K5h">
                                                                 <rect key="frame" x="0.0" y="0.0" width="125" height="32.5"/>
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -319,12 +319,23 @@
                         <rightBarButtonItems>
                             <barButtonItem systemItem="add" id="BZW-wr-YLy">
                                 <connections>
-                                    <segue destination="XhE-y4-dRu" kind="show" id="LKY-lV-MFZ"/>
+                                    <segue destination="XhE-y4-dRu" kind="show" identifier="toReview" id="xxn-Im-Crk"/>
                                 </connections>
                             </barButtonItem>
                             <barButtonItem image="icon_heart_filled" id="slS-bu-Hgj"/>
                         </rightBarButtonItems>
                     </navigationItem>
+                    <connections>
+                        <outlet property="addressLabel" destination="vyW-MF-wyM" id="gmB-iN-y8d"/>
+                        <outlet property="dieselPriceText" destination="h0a-XD-K5h" id="Csl-n8-aSu"/>
+                        <outlet property="distanceLabel" destination="UuM-4w-jqD" id="5yQ-QM-MNR"/>
+                        <outlet property="gasScore" destination="yYr-5d-sXs" id="JQG-aE-fsM"/>
+                        <outlet property="generalScore" destination="1hR-1R-9t6" id="Ig3-Zd-kex"/>
+                        <outlet property="magnaPriceText" destination="cMB-QK-j35" id="N57-85-DwQ"/>
+                        <outlet property="premiumPriceText" destination="p64-B2-WCL" id="dEd-aa-w87"/>
+                        <outlet property="servicesScore" destination="PYe-fZ-nva" id="739-03-VAY"/>
+                        <outlet property="timeScore" destination="5US-nZ-8bI" id="Ac3-hk-6UG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wmg-dm-TEw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

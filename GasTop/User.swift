@@ -14,10 +14,29 @@ class User : Codable
     var username: String;
     var email:String;
     
+    static private let userDefaults = UserDefaults.standard;
+
+    
     init (id: Int, username: String, email:String)
     {
         self.id = id;
         self.email = email;
         self.username = username;
+    }
+    
+    static func loginLocalUser(id: Int, username: String, email: String) {
+        userDefaults.set(email, forKey: "email")
+        userDefaults.synchronize()
+        userDefaults.set(id, forKey: "id")
+        userDefaults.synchronize()
+        userDefaults.set(username, forKey: "username")
+    }
+    
+    static func getLoggedUserId() -> Int? {
+        return userDefaults.integer(forKey: "id");
+    }
+    
+    static func getLoggedUserUsername() -> String? {
+        return userDefaults.string(forKey: "username");
     }
 }
