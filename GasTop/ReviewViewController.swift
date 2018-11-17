@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ReviewViewController: UIViewController
+class ReviewViewController: UIViewController, RatingControlDelegate
 {
 
     var sceneMode: ESceneMode = .NA;
@@ -48,6 +48,11 @@ class ReviewViewController: UIViewController
         super.viewDidLoad()
 
         setSaveButtonEnabled(false);
+        
+        generalScore.ratingControlDelegate = self;
+        servicesScore.ratingControlDelegate = self;
+        timeScore.ratingControlDelegate = self;
+        gasScore.ratingControlDelegate = self;
         
         switch sceneMode {
             case .Create:
@@ -104,40 +109,60 @@ class ReviewViewController: UIViewController
     }
     
     private func disableEditing() {
+        generalScore.editable = false;
+        servicesScore.editable = false;
+        gasScore.editable = false;
+        timeScore.editable = false;
         
+        magnaPriceText.isUserInteractionEnabled = false;
+        premiumPriceText.isUserInteractionEnabled = false;
+        dieselPriceText.isUserInteractionEnabled = false;
+        
+        generalComments.isUserInteractionEnabled = false;
+        servicesComments.isUserInteractionEnabled = false;
+        timeComments.isUserInteractionEnabled = false;
+        gasComments.isUserInteractionEnabled = false;
+
     }
     
     private func setOutletData() {
+        generalScore.rating = Double(review!.generalScore);
+        servicesScore.rating = review!.serviceScore != nil ? Double(review!.serviceScore!) : 0;
+        gasScore.rating = review!.gasScore != nil ? Double(review!.gasScore!) : 0;
+        timeScore.rating = review!.timeScore != nil ? Double(review!.timeScore!) : 0;
         
+        magnaPriceText.text = review!.magnaPrice != nil ? "\(review!.magnaPrice!)" : nil;
+        premiumPriceText.text = review!.premiumPrice != nil ? "\(review!.premiumPrice!)" : nil;
+        dieselPriceText.text = review!.dieselPrice != nil ? "\(review!.dieselPrice!)" : nil;
+        
+        generalComments.text = review!.generalComment != nil ? "\(review!.generalComment!)" : nil;
+        servicesComments.text = review!.serviceComment != nil ? "\(review!.serviceComment!)" : nil;
+        timeComments.text = review!.timeComment != nil ? "\(review!.timeComment!)" : nil;
+        gasComments.text = review!.gasComment != nil ? "\(review!.gasComment!)" : nil;
     }
     
     private func setSaveButtonEnabled(_ state: Bool) {
         saveButton.isEnabled = state;
+
     }
     
-    
-    @IBAction func tappedRatingControl(_ sender: Any) {
-        
-        if let ratingControlTapped = sender as? UIView {
-            switch ratingControlTapped.tag {
-                case 0:
-                    reviewedGeneral = true;
-                    setSaveButtonEnabled(true);
-                case 1:
-                    reviewedServices = true;
-                case 2:
-                    reviewedTime = true;
-                case 3:
-                    reviewedGas = true;
-            
-                default:
-                    print ("Unknown tag tapped in gesture recognition");
-            }
-        }
-        else {
-            print("Tap Gesture recognizer ttriggered for unknown view")
+    // MARK: - Rating Control Delegate
+    func ratingChanged(_ ratingControl: RatingControl, fromRating: Float, toRating: Float) {
+        switch (ratingControl) {
+            case generalScore:
+                reviewedGeneral = true;
+                setSaveButtonEnabled(true);
+            case servicesScore:
+                reviewedServices = true;
+            case timeScore:
+                reviewedTime = true;
+            case gasScore :
+                reviewedGas = true;
+            default:
+                print ("Unknown rating control in ReviewVC")
         }
     }
+
     
     /*
      // MARK: - Navigation

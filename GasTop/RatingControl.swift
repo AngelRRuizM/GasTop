@@ -15,9 +15,16 @@ class RatingControl: UIStackView {
     
     private var ratingButtons = [UIButton]()
     
+    var ratingControlDelegate: RatingControlDelegate?;
+    
     var rating = 0.0 {
         didSet {
             updateButtonSelectionStates()
+        }
+        willSet(toValue) {
+            if (ratingControlDelegate != nil) {
+                ratingControlDelegate!.ratingChanged(self, fromRating: Float(rating), toRating: Float(toValue))
+            }
         }
     }
     @IBInspectable public var editable: Bool = true
@@ -65,7 +72,6 @@ class RatingControl: UIStackView {
             //else, the rating is to be set directly to that number of stars
             rating = Double(selectedRating)
         }
-        print("rating: " + String(rating))
     }
     
     //MARK: Private Methods
@@ -154,4 +160,8 @@ class RatingControl: UIStackView {
         }
     }
     
+}
+
+protocol RatingControlDelegate{
+    func ratingChanged(_ ratingControl: RatingControl, fromRating: Float, toRating: Float)
 }
