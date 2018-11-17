@@ -378,6 +378,9 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Configuración" id="f6z-vF-hRc"/>
                     <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="usernameTextField" destination="dqx-yI-i6s" id="RUy-LP-zB3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Ln-ar-CYq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

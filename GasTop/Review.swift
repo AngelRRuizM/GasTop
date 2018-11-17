@@ -27,7 +27,7 @@ class Review: Codable
     var timeComment: String?;
     var gasScore: Float?;
     var gasComment: String?;
-
+    
     init (id: Int, byUser: Int, forGasStation: Int, date: Date, generalScore: Float, generalComment: String?, magnaPrice: Float?,premiumPrice: Float?, dieselPrice: Float?, serviceScore: Float?, serviceComment: String?, timeScore: Float?, timeComment: String?, gasScore: Float?, gasComment: String?) {
 
         self.id = id;

@@ -57,7 +57,34 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
 
         }
     }
-    
+
+    //For annotations displaying the gas station icon. However, it removes the title
+    /*func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        guard let gasStation = annotation as? GasStation else {
+            return nil;
+        }
+        
+        let reuseId = "reviewAnnotationView";
+        
+        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseId)
+        //Create new annotation view if cannot reuse one
+        if annotationView == nil {
+            annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: reuseId);
+            annotationView?.canShowCallout = true;
+        }
+        else {
+            annotationView!.annotation = annotation;
+        }
+        
+        //Set annotation-specific properties **AFTER**
+        //the view is dequeued or created...
+        
+        annotationView?.image = UIImage(named: gasStation.mapIconName);
+        
+        return annotationView;
+    }
+    */
+
     //MARK: Map Data functions
     func getGasStations() {
         gasStations.removeAll();

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ReviewViewController: UIViewController, RatingControlDelegate
+class ReviewViewController: UIViewController, RatingControlDelegate, UITextViewDelegate, UITextFieldDelegate
 {
 
     var sceneMode: ESceneMode = .NA;
@@ -54,6 +54,19 @@ class ReviewViewController: UIViewController, RatingControlDelegate
         timeScore.ratingControlDelegate = self;
         gasScore.ratingControlDelegate = self;
         
+        generalComments.delegate = self;
+        servicesComments.delegate = self;
+        timeComments.delegate = self;
+        gasComments.delegate = self;
+        
+        magnaPriceText.delegate = self;
+        premiumPriceText.delegate = self;
+        dieselPriceText.delegate = self;
+        
+        let tapRecognizer = UITapGestureRecognizer()
+        tapRecognizer.addTarget(self, action: #selector(ReviewViewController.didTapView))
+        self.view.addGestureRecognizer(tapRecognizer)
+        
         switch sceneMode {
             case .Create:
                 print("Creating new review");
@@ -83,6 +96,10 @@ class ReviewViewController: UIViewController, RatingControlDelegate
                 fatalError("Review Scene Mode Not Valid \(sceneMode)");
         }
         
+    }
+    
+    @objc private func didTapView() {
+        self.view.endEditing(true)
     }
     
     private func createAndSaveReview() {
@@ -144,6 +161,39 @@ class ReviewViewController: UIViewController, RatingControlDelegate
     private func setSaveButtonEnabled(_ state: Bool) {
         saveButton.isEnabled = state;
 
+    }
+    
+    //MARK: - UITextView Methods
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        
+        if textView.text == PLACEHOLDER_TEXTFIELD_TEXT
+        {
+            textView.text = ""
+        }
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        
+        if textView.text == ""
+        {
+            textView.text = PLACEHOLDER_TEXTFIELD_TEXT
+        }
+        
+    }
+    
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if(text == "\n") {
+            textView.resignFirstResponder()
+            return false
+        }
+        return true
+    }
+    
+    //MARK: - UITextField functions
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
     
     // MARK: - Rating Control Delegate

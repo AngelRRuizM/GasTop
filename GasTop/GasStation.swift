@@ -56,7 +56,7 @@ class GasStation: NSObject, Codable, MKAnnotation
     var gasScoreReviews: Int;
     var serviceScoreReviews: Int;
     var timeScoreReviews: Int;
-    
+
     
     //MARK: MKAnnotationProperties
     let coordinate: CLLocationCoordinate2D;
@@ -66,6 +66,9 @@ class GasStation: NSObject, Codable, MKAnnotation
     var subtitle: String? {
         return "";
     }
+    
+    let mapIconName = "icon_gas_station";
+
     
     //Needed if coding a "complex" type (CLLocation) that does not conform to Codable
     required init(from decoder: Decoder) throws {        
