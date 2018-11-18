@@ -18,189 +18,142 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="mLx-MJ-5DP">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ohb-Z5-OeL">
-                                        <rect key="frame" x="169" y="0.0" width="37.5" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="wKh-25-K4H" customClass="RatingControl" customModule="GasTop" customModuleProvider="target">
-                                        <rect key="frame" x="47" y="53" width="281" height="50"/>
-                                        <gestureRecognizers/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="starCount">
-                                                <integer key="value" value="5"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </stackView>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" text="Comentarios de gasolinera" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="XVC-88-d4p">
-                                        <rect key="frame" x="19" y="136" width="337" height="83"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" alignment="center" spacing="67" translatesAutoresizingMaskIntoConstraints="NO" id="sOQ-TE-HLp">
-                                        <rect key="frame" x="18.5" y="251.5" width="338" height="65"/>
-                                        <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Keo-5A-4R9">
-                                                <rect key="frame" x="0.0" y="2.5" width="68" height="60"/>
-                                                <subviews>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xNO-H3-BGN">
-                                                        <rect key="frame" x="0.0" y="0.0" width="68" height="30"/>
-                                                        <nil key="textColor"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
-                                                    </textField>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Magna" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UzC-dF-mbW">
-                                                        <rect key="frame" x="0.0" y="30" width="68" height="30"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                </subviews>
-                                                <constraints>
-                                                    <constraint firstItem="xNO-H3-BGN" firstAttribute="width" secondItem="Keo-5A-4R9" secondAttribute="width" id="H7i-9V-Wa9"/>
-                                                    <constraint firstItem="UzC-dF-mbW" firstAttribute="width" secondItem="Keo-5A-4R9" secondAttribute="width" id="pRq-vl-kWq"/>
-                                                </constraints>
-                                            </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="SOk-Oh-zHT">
-                                                <rect key="frame" x="135" y="2.5" width="68" height="60"/>
-                                                <subviews>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="d3E-eS-UXV">
-                                                        <rect key="frame" x="0.0" y="0.0" width="68" height="30"/>
-                                                        <nil key="textColor"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
-                                                    </textField>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Premium" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p5q-hR-ucM">
-                                                        <rect key="frame" x="0.0" y="30" width="68" height="30"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                </subviews>
-                                                <constraints>
-                                                    <constraint firstItem="p5q-hR-ucM" firstAttribute="width" secondItem="SOk-Oh-zHT" secondAttribute="width" id="kpD-N5-ULs"/>
-                                                    <constraint firstItem="d3E-eS-UXV" firstAttribute="width" secondItem="SOk-Oh-zHT" secondAttribute="width" id="lo3-xV-HHC"/>
-                                                </constraints>
-                                            </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="YAo-DO-niU">
-                                                <rect key="frame" x="270" y="2.5" width="68" height="60"/>
-                                                <subviews>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YVr-o7-B8V">
-                                                        <rect key="frame" x="0.0" y="0.0" width="68" height="30"/>
-                                                        <nil key="textColor"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
-                                                    </textField>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Diesel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mny-07-qtr">
-                                                        <rect key="frame" x="0.0" y="30" width="68" height="30"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                </subviews>
-                                                <constraints>
-                                                    <constraint firstItem="mny-07-qtr" firstAttribute="width" secondItem="YAo-DO-niU" secondAttribute="width" id="343-OQ-upQ"/>
-                                                    <constraint firstItem="YVr-o7-B8V" firstAttribute="width" secondItem="YAo-DO-niU" secondAttribute="width" id="WAX-6q-zSG"/>
-                                                </constraints>
-                                            </stackView>
-                                        </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="kt2-1f-5ms">
-                                        <rect key="frame" x="37.5" y="349" width="300" height="70.5"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Servicios" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WUt-ia-T3F">
-                                                <rect key="frame" x="115" y="0.0" width="70" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <stackView opaque="NO" tag="1" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="5Vt-nC-8Py" customClass="RatingControl" customModule="GasTop" customModuleProvider="target">
-                                                <rect key="frame" x="30.5" y="20.5" width="239" height="0.0"/>
-                                                <gestureRecognizers/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="starCount">
-                                                        <integer key="value" value="5"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                            </stackView>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Comentarios..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="6hg-RY-wab">
-                                                <rect key="frame" x="0.0" y="20.5" width="300" height="50"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                            </textView>
-                                        </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Csz-CL-Cxd">
-                                        <rect key="frame" x="38" y="452.5" width="299" height="91.5"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tiempo de Atención" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FxC-KY-zMa">
-                                                <rect key="frame" x="73" y="0.0" width="153" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <stackView opaque="NO" tag="2" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="VGf-zA-DCi" customClass="RatingControl" customModule="GasTop" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="20.5" width="299" height="0.0"/>
-                                                <gestureRecognizers/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="starCount">
-                                                        <integer key="value" value="5"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                            </stackView>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Comentarios..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="kxZ-oS-rpi">
-                                                <rect key="frame" x="9" y="20.5" width="281" height="71"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                            </textView>
-                                        </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="eKs-Pe-ugY">
-                                        <rect key="frame" x="38" y="576.5" width="299" height="70.5"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calidad de Gasolina" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Epy-x8-fUV">
-                                                <rect key="frame" x="74" y="0.0" width="151.5" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <stackView opaque="NO" tag="3" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="U3X-q0-40u" customClass="RatingControl" customModule="GasTop" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="20.5" width="299" height="0.0"/>
-                                                <gestureRecognizers/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="starCount">
-                                                        <integer key="value" value="5"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                            </stackView>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Comentarios..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Ss8-Nu-eDW">
-                                                <rect key="frame" x="9" y="20.5" width="281" height="50"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                            </textView>
-                                        </subviews>
-                                    </stackView>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="sOQ-TE-HLp" firstAttribute="height" secondItem="mLx-MJ-5DP" secondAttribute="height" multiplier="0.1" id="D5w-zF-2jB"/>
-                                </constraints>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Total" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fu5-Vt-AZJ">
+                                <rect key="frame" x="167" y="29" width="42" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Servicios" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bhp-9d-iyB">
+                                <rect key="frame" x="14" y="282" width="78" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Premium" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cle-AM-6QL">
+                                <rect key="frame" x="27" y="234" width="72" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kcf-s9-7el" customClass="RatingControl" customModule="GasTop" customModuleProvider="target">
+                                <rect key="frame" x="47" y="60" width="270" height="65"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="starCount">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </stackView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Comentarios..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Bd2-lF-yrW">
+                                <rect key="frame" x="47" y="130" width="270" height="65"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DSk-BY-EpG" customClass="RatingControl" customModule="GasTop" customModuleProvider="target">
+                                <rect key="frame" x="52" y="305" width="246" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="starCount">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </stackView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Comentarios..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Cd9-DG-gTP">
+                                <rect key="frame" x="65" y="346" width="246" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tiempo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ohv-at-apG">
+                                <rect key="frame" x="16" y="408" width="64" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pvc-hx-qje" customClass="RatingControl" customModule="GasTop" customModuleProvider="target">
+                                <rect key="frame" x="52" y="425" width="246" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="starCount">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </stackView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Comentarios..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Xkj-p7-GcG">
+                                <rect key="frame" x="65" y="469" width="246" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Calidad de gasolina" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XUf-PD-Nqs">
+                                <rect key="frame" x="14" y="530" width="165" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tcm-mM-xm1" customClass="RatingControl" customModule="GasTop" customModuleProvider="target">
+                                <rect key="frame" x="59" y="560" width="246" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="starCount">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </stackView>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vTw-dF-BKV">
+                                <rect key="frame" x="16" y="203" width="95" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Magna" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4DS-Bc-fU3">
+                                <rect key="frame" x="146" y="234" width="72" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tn0-Uf-Q4C">
+                                <rect key="frame" x="135" y="203" width="95" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Diesel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jNV-XI-dUd">
+                                <rect key="frame" x="263" y="233" width="72" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EyP-9s-Y9E">
+                                <rect key="frame" x="252" y="202" width="95" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Comentarios..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="RHR-Hc-RwQ">
+                                <rect key="frame" x="65" y="604" width="246" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="mLx-MJ-5DP" firstAttribute="centerX" secondItem="TDE-DK-U8u" secondAttribute="centerX" id="Gqz-VX-FHS"/>
-                            <constraint firstItem="mLx-MJ-5DP" firstAttribute="width" secondItem="TDE-DK-U8u" secondAttribute="width" id="Rfk-dR-Lzd"/>
-                            <constraint firstItem="mLx-MJ-5DP" firstAttribute="centerY" secondItem="TDE-DK-U8u" secondAttribute="centerY" id="dXR-an-t2N"/>
-                            <constraint firstItem="mLx-MJ-5DP" firstAttribute="height" secondItem="TDE-DK-U8u" secondAttribute="height" id="eaX-rY-xZt"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="TDE-DK-U8u"/>
                     </view>
                     <navigationItem key="navigationItem" id="Htb-eA-9PB">
@@ -216,18 +169,18 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="dieselPriceText" destination="YVr-o7-B8V" id="oMG-Hi-jpB"/>
-                        <outlet property="gasComments" destination="Ss8-Nu-eDW" id="nfq-UQ-Lxe"/>
-                        <outlet property="gasScore" destination="U3X-q0-40u" id="cml-d0-h3t"/>
-                        <outlet property="generalComments" destination="XVC-88-d4p" id="vPX-SP-3qF"/>
-                        <outlet property="generalScore" destination="wKh-25-K4H" id="dX1-mN-oFn"/>
-                        <outlet property="magnaPriceText" destination="xNO-H3-BGN" id="XeW-H0-Eln"/>
-                        <outlet property="premiumPriceText" destination="d3E-eS-UXV" id="QG0-Tp-B4I"/>
+                        <outlet property="dieselPriceText" destination="EyP-9s-Y9E" id="dis-DH-KKd"/>
+                        <outlet property="gasComments" destination="RHR-Hc-RwQ" id="ri9-0X-udq"/>
+                        <outlet property="gasScore" destination="tcm-mM-xm1" id="1hy-YA-EIQ"/>
+                        <outlet property="generalComments" destination="Bd2-lF-yrW" id="ycq-RZ-oHz"/>
+                        <outlet property="generalScore" destination="kcf-s9-7el" id="yPJ-c2-UQX"/>
+                        <outlet property="magnaPriceText" destination="tn0-Uf-Q4C" id="WJK-12-Aa5"/>
+                        <outlet property="premiumPriceText" destination="vTw-dF-BKV" id="wYk-3S-txt"/>
                         <outlet property="saveButton" destination="Fg4-ik-Foh" id="FQ3-88-2bh"/>
-                        <outlet property="servicesComments" destination="6hg-RY-wab" id="hR2-2S-SkW"/>
-                        <outlet property="servicesScore" destination="5Vt-nC-8Py" id="zzL-CX-IQx"/>
-                        <outlet property="timeComments" destination="kxZ-oS-rpi" id="hDG-4h-5Mz"/>
-                        <outlet property="timeScore" destination="VGf-zA-DCi" id="PH8-NM-NSd"/>
+                        <outlet property="servicesComments" destination="Cd9-DG-gTP" id="KLz-b7-hpX"/>
+                        <outlet property="servicesScore" destination="DSk-BY-EpG" id="kec-cn-mg0"/>
+                        <outlet property="timeComments" destination="Xkj-p7-GcG" id="F2a-AL-7aL"/>
+                        <outlet property="timeScore" destination="pvc-hx-qje" id="Bkj-k9-i0X"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NfY-oD-Iez" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -255,7 +208,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="o6q-fg-kxN"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Mapa" id="0Ah-Wx-J3O"/>
+                    <tabBarItem key="tabBarItem" title="Mapa" image="icon_map" id="0Ah-Wx-J3O"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="map" destination="ozv-41-lmy" id="HZr-Em-dTW"/>
@@ -349,7 +302,7 @@
                                     <action selector="Logout:" destination="dcf-SU-G3Q" eventType="touchUpInside" id="IfS-ts-GZc"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_user_config" translatesAutoresizingMaskIntoConstraints="NO" id="FO6-lD-niv">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user_profile" translatesAutoresizingMaskIntoConstraints="NO" id="FO6-lD-niv">
                                 <rect key="frame" x="124" y="50" width="127" height="126.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="FO6-lD-niv" secondAttribute="height" multiplier="1:1" id="atD-Wt-cs2"/>
@@ -376,7 +329,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="aM7-c2-SSI"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Configuración" id="f6z-vF-hRc"/>
+                    <tabBarItem key="tabBarItem" title="Configuración" image="icon_user_config" id="f6z-vF-hRc"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="usernameTextField" destination="dqx-yI-i6s" id="RUy-LP-zB3"/>
@@ -420,6 +373,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="icon_user_config" width="75" height="75"/>
+        <image name="icon_map" width="30" height="30"/>
+        <image name="icon_user_config" width="30" height="30"/>
+        <image name="user_profile" width="1024" height="1024"/>
     </resources>
 </document>
