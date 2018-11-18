@@ -111,7 +111,7 @@ class HTTPHandler{
                         //If there is a call-back function, call it with the data received from the request
                         callbackFunction(data)
                         
-                        print ("Response: " + String(httpResponse.statusCode))
+                        print ("Failed POST to \(ROUTE_URL). Response: " + String(httpResponse.statusCode))
                     }
                 }
             }

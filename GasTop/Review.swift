@@ -10,7 +10,10 @@ import Foundation
 
 class Review: Codable
 {
-    var id: Int = -1;
+    static let ROUTE = "/reviews";
+    private static var returnedReviews: [Review] = [];
+
+    var id: Int;
     var byUser: Int;
     var forGasStation: Int;
     var date: Date;
@@ -49,35 +52,86 @@ class Review: Codable
         self.gasComment = gasComment;
     }
     
-    init (byUser: Int, forGasStation: Int, date: Date, generalScore: Float, generalComment: String?, magnaPrice: Float?,premiumPrice: Float?, dieselPrice: Float?, serviceScore: Float?, serviceComment: String?, timeScore: Float?, timeComment: String?, gasScore: Float?, gasComment: String?) {
+    convenience init (byUser: Int, forGasStation: Int, date: Date, generalScore: Float, generalComment: String?, magnaPrice: Float?,premiumPrice: Float?, dieselPrice: Float?, serviceScore: Float?, serviceComment: String?, timeScore: Float?, timeComment: String?, gasScore: Float?, gasComment: String?) {
         
-        self.byUser = byUser;
-        self.forGasStation = forGasStation;
-        self.date = date;
-        
-        self.generalScore = generalScore;
-        self.generalComment = generalComment;
-        self.magnaPrice = magnaPrice;
-        self.premiumPrice = premiumPrice;
-        self.dieselPrice = dieselPrice;
-        
-        self.serviceScore = serviceScore;
-        self.serviceComment = serviceComment;
-        self.timeScore = timeScore;
-        self.timeComment = timeComment;
-        self.gasScore = gasScore;
-        self.gasComment = gasComment;
+        self.init (-1, byUser, forGasStation, date, generalScore, generalComment, magnaPrice, premiumPrice, dieselPrice, serviceScore, serviceComment, timeScore, timeComment, gasScore, gasComment);
+    }
+
+    convenience init(id: Int, byUser: Int, forGasStation: Int, date: Date, generalScore: Float) {
+        self.init (id, byUser, forGasStation, date, generalScore, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil)
+    }
+
+    convenience init(byUser: Int, forGasStation: Int, date: Date, generalScore: Float) {
+        self.init (-1, byUser, forGasStation, date, generalScore, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil)
     }
     
-    static func createReview(_ review: Review) {
-        
+    func getAsJSONParams() -> [String : String] {
+        let jsonDic = [
+            "byUser": String(byUser),
+            "forGasStation" = String(forGasStation),
+            "date" = String(date),
+            "generalScore" = String(generalScore)
+        ];
+
+        if (generalComment != nil) {
+            jsonDic["generalComment"] = String(generalComment);
+        }
+        if (magnaPrice != nil) {
+            jsonDic["magnaPrice"] = String(magnaPrice);
+        }
+        if (premiumPrice != nil) {
+            jsonDic["premiumPrice"] = String(premiumPrice);
+        }
+        if (dieselPrice != nil) {
+            jsonDic["dieselPrice"] = String(dieselPrice);
+        }
+
+        if (serviceScore != nil) {
+            jsonDic["serviceScore"] = String(serviceScore);
+        }
+        if (serviceComment != nil) {
+            jsonDic["serviceComment"] = String(serviceComment);
+        }
+        if (timeScore != nil) {
+            jsonDic["timeScore"] = String(timeScore);
+        }
+        if (timeComment != nil) {
+            jsonDic["timeComment"] = String(timeComment);
+        }
+        if (gasScore != nil) {
+            jsonDic["gasScore"] = String(gasScore);
+        }
+        if (gasComment != nil) {
+            jsonDic["gasComment"] = String(gasComment)
+        }
+    }
+
+    static func sendReview(_ review: Review) {
+        HTTPHandler.makeHTTPPostRequest(route: Review.ROUTE, parameters: review.getAsJSONParams())
     }
     
     static func getReviews(fromUserId id: Int) -> [Review] {
-        return [];
+
+        HTTPHandler.makeHTTPGetRequest(route: Review.ROUTE + "?byUser=\(id)", httpBody: nil, callbackFunction: extractReviews)
+        return returnedReviews;
     }
     
     static func getReviews(forGasStationId id: Int) -> [Review] {
-        return [];
+        HTTPHandler.makeHTTPGetRequest(route: Review.ROUTE + "?forGasStation=\(id)", httpBody: nil, callbackFunction: extractReviews)
+        return returnedReviews;
+    }
+
+    private static func extractReviews(_ data: Data?) {
+        do {
+            let reviews = try JSONDecoder().decode([Review].self, from: data!)
+
+            returnedReviews.removeAll();
+            returnedReviews += reviews;
+
+            print ("\nDECODED REVIEWS: \(reviews)\n")
+        }
+        catch let jsonError {
+            print(jsonError);
+        }
     }
 }

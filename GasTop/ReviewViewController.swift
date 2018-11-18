@@ -122,7 +122,7 @@ class ReviewViewController: UIViewController, RatingControlDelegate, UITextViewD
         
         let review = Review(byUser: byUserId!, forGasStation: forStationId!, date: Date(), generalScore: Float(gralScore), generalComment: gralComment, magnaPrice: mPrice,premiumPrice: pPrice, dieselPrice: dPrice, serviceScore: sScore, serviceComment: sComments, timeScore: tScore, timeComment: tComments, gasScore: gScore, gasComment: gComments);
         
-        Review.createReview(review);
+        Review.sendReview(review);
     }
     
     private func disableEditing() {

@@ -15,47 +15,34 @@ enum GasStationKeys: String, CodingKey {
     case lng = "lng";
     case name = "name";
     case address = "address"
-    
-    case totalMagnaPrice = "totalMagnaPrice";
-    case totalPremiumPrice = "totalPremiumPrice";
-    case totalDieselPrice = "totalDieselPrice";
-    case totalGeneralScore = "totalGeneralScore";
-    case totalGasScore = "totalGasScore";
-    case totalServiceScore = "totalServiceScore";
-    case totalTimeScore = "totalTimeScore";
-    
-    case magnaPriceReviews = "magnaPriceReviews";
-    case premiumPriceReviews = "premiumPriceReviews";
-    case dieselPriceReviews = "dieselPriceReviews";
-    case generalScoreReviews = "generalScoreReviews";
-    case gasScoreReviews = "gasScoreReviews";
-    case serviceScoreReviews = "serviceScoreReviews";
-    case timeScoreReviews = "timeScoreReviews";
 }
 
 class GasStation: NSObject, Codable, MKAnnotation
 {
+    static let ROUTE = "/gasStations";
+    private static var returnedStations: [GasStation] = [];
+
     var id: Int;
     var lat: Float;
     var lng: Float;
     var name: String;
     var address: String;
     
-    var totalMagnaPrice: Float;
-    var totalPremiumPrice: Float;
-    var totalDieselPrice: Float;
-    var totalGeneralScore: Float;
-    var totalGasScore: Float;
-    var totalServiceScore: Float;
-    var totalTimeScore: Float;
+    var totalMagnaPrice: Float = 0.0;
+    var totalPremiumPrice: Float = 0.0;
+    var totalDieselPrice: Float = 0.0;
+    var totalGeneralScore: Float = 0.0;
+    var totalGasScore: Float = 0.0;
+    var totalServiceScore: Float = 0.0;
+    var totalTimeScore: Float = 0.0;
     
-    var magnaPriceReviews: Int;
-    var premiumPriceReviews: Int;
-    var dieselPriceReviews: Int;
-    var generalScoreReviews: Int;
-    var gasScoreReviews: Int;
-    var serviceScoreReviews: Int;
-    var timeScoreReviews: Int;
+    var magnaPriceReviews: Int = 0;
+    var premiumPriceReviews: Int = 0;
+    var dieselPriceReviews: Int = 0;
+    var generalScoreReviews: Int = 0;
+    var gasScoreReviews: Int = 0;
+    var serviceScoreReviews: Int = 0;
+    var timeScoreReviews: Int = 0;
 
     
     //MARK: MKAnnotationProperties
@@ -79,22 +66,6 @@ class GasStation: NSObject, Codable, MKAnnotation
         self.lng = try container.decode(Float.self, forKey: .lng);
         self.name = try container.decode(String.self, forKey: .name);
         self.address = try container.decode(String.self, forKey: .address);
-        
-        self.totalMagnaPrice = try container.decode(Float.self, forKey: .totalMagnaPrice);
-        self.totalPremiumPrice = try container.decode(Float.self, forKey: .totalPremiumPrice);
-        self.totalDieselPrice = try container.decode(Float.self, forKey: .totalDieselPrice);
-        self.totalGeneralScore = try container.decode(Float.self, forKey: .totalGeneralScore);
-        self.totalGasScore = try container.decode(Float.self, forKey: .totalGasScore);
-        self.totalServiceScore = try container.decode(Float.self, forKey: .totalServiceScore);
-        self.totalTimeScore = try container.decode(Float.self, forKey: .totalTimeScore);
-        
-        self.magnaPriceReviews = try container.decode(Int.self, forKey: .magnaPriceReviews);
-        self.premiumPriceReviews = try container.decode(Int.self, forKey: .premiumPriceReviews);
-        self.dieselPriceReviews = try container.decode(Int.self, forKey: .dieselPriceReviews);
-        self.generalScoreReviews = try container.decode(Int.self, forKey: .generalScoreReviews);
-        self.gasScoreReviews = try container.decode(Int.self, forKey: .gasScoreReviews);
-        self.serviceScoreReviews = try container.decode(Int.self, forKey: .serviceScoreReviews);
-        self.timeScoreReviews = try container.decode(Int.self, forKey: .timeScoreReviews);
 
         self.coordinate = CLLocationCoordinate2D(latitude: Double(self.lat), longitude: Double(self.lng));
     }
@@ -107,49 +78,16 @@ class GasStation: NSObject, Codable, MKAnnotation
         try container.encode(lng, forKey: .lng);
         try container.encode(name, forKey: .name);
         try container.encode(address, forKey: .address);
-        
-        try container.encode(totalMagnaPrice, forKey: .totalMagnaPrice);
-        try container.encode(totalPremiumPrice, forKey: .totalPremiumPrice);
-        try container.encode(totalDieselPrice, forKey: .totalDieselPrice);
-        try container.encode(totalGeneralScore, forKey: .totalGeneralScore);
-        try container.encode(totalGasScore, forKey: .totalGasScore);
-        try container.encode(totalServiceScore, forKey: .totalServiceScore);
-        try container.encode(totalTimeScore, forKey: .totalTimeScore);
-        
-        try container.encode(magnaPriceReviews, forKey: .magnaPriceReviews);
-        try container.encode(premiumPriceReviews, forKey: .premiumPriceReviews);
-        try container.encode(dieselPriceReviews, forKey: .dieselPriceReviews);
-        try container.encode(generalScoreReviews, forKey: .generalScoreReviews);
-        try container.encode(gasScoreReviews, forKey: .gasScoreReviews);
-        try container.encode(serviceScoreReviews, forKey: .serviceScoreReviews);
-        try container.encode(timeScoreReviews, forKey: .timeScoreReviews);
     }
     
-    
-    init(id: Int, lat: Float, lng: Float, name: String, address: String, totalMagnaPrice: Float, totalPremiumPrice: Float, totalDieselPrice: Float, totalGeneralScore: Float, totalGasScore: Float, totalServiceScore: Float, totalTimeScore: Float, magnaPriceReviews: Int, premiumPriceReviews: Int, dieselPriceReviews: Int, generalScoreReviews: Int, gasScoreReviews: Int, serviceScoreReviews: Int, timeScoreReviews: Int) {
+    init(id: Int, lat: Float, lng: Float, name: String, address: String) {
 
         self.id =  id;
 		self.lat =  lat;
 		self.lng =  lng;
 		self.name =  name;
         self.address = address;
-		
-		self.totalMagnaPrice =  totalMagnaPrice;
-		self.totalPremiumPrice = totalPremiumPrice;
-		self.totalDieselPrice =  totalDieselPrice;
-		self.totalGeneralScore =  totalGeneralScore;
-		self.totalGasScore =  totalGasScore;
-		self.totalServiceScore =  totalServiceScore;
-		self.totalTimeScore =  totalTimeScore;
-		
-		self.magnaPriceReviews =  magnaPriceReviews;
-		self.premiumPriceReviews =  premiumPriceReviews;
-		self.dieselPriceReviews =  dieselPriceReviews;
-		self.generalScoreReviews =  generalScoreReviews;
-		self.gasScoreReviews =  gasScoreReviews;
-		self.serviceScoreReviews = serviceScoreReviews;
-		self.timeScoreReviews =  timeScoreReviews;
-        
+
         //Initialize MKAnnotation properties
         coordinate = CLLocationCoordinate2D(latitude: Double(self.lat), longitude: Double(self.lng));
         
@@ -166,41 +104,119 @@ class GasStation: NSObject, Codable, MKAnnotation
     }
 
 	func getAvgMagnaPrice() -> Float {
+        if (magnaPriceReviews == 0)
+            return 0;
 		return magnaPriceReviews == 0 ? 0 : totalMagnaPrice /  Float(magnaPriceReviews);
 	}
 
 	func getAvgPremiumPrice() -> Float {
+        if (premiumPriceReviews == 0)
+            return 0;
 		return premiumPriceReviews == 0 ? 0 : totalPremiumPrice / Float(premiumPriceReviews);
 	}
 
 	func getAvgDieselPrice() -> Float {
+        if (dieselPriceReviews == 0)
+            return 0;
 		return dieselPriceReviews == 0 ? 0 : totalDieselPrice / Float(dieselPriceReviews);
 	}
 
 	func getAvgGeneralScore() -> Float {
+        if (generalScoreReviews == 0)
+            return 0;
 		return generalScoreReviews == 0 ? 0 : totalGeneralScore / Float(generalScoreReviews);
 	}
 
 	func getAvgGasScore() -> Float {
+        if (gasScoreReviews == 0)
+            return 0;
 		return gasScoreReviews == 0 ? 0 : totalGasScore / Float(gasScoreReviews);
 	}
 
 	func getAvgServiceScore() -> Float {
+        if (serviceScoreReviews == 0)
+            return 0;
 		return serviceScoreReviews == 0 ? 0 : totalServiceScore / Float(serviceScoreReviews);
 	}
 
 	func getAvgTimeScore() -> Float {
+        if (timeScoreReviews == 0)
+            return 0;
 		return timeScoreReviews == 0 ? 0 : totalTimeScore / Float(timeScoreReviews);
 	}
 
+    func computeGasStationScoring(fromReviews reviews: [Review]) {
+        for review in reviews {
+            if (review.magnaPrice != nil){
+                magnaPriceReviews++;
+                totalMagnaPrice += review.magnaPrice;
+            }
+            if (review.premiumPrice != nil){
+                premiumPriceReviews++;
+                totalPremiumPrice += review.premiumPrice;
+            }
+            if (review.dieselPrice != nil){
+                dieselPriceReviews++;
+                totalDieselPrice += review.dieselPrice;
+            }
+
+            if (review.generalScore != nil){
+                generalScoreReviews++;
+                totalGeneralScore += review.generalScore;
+            }
+            if (review.serviceScore != nil){
+                serviceScoreReviews++;
+                totalServiceScore += review.serviceScore;
+            }
+            if (review.timeScore != nil){
+                timeScoreReviews++;
+                totalTimeScore += review.timeScore;
+            }
+            if (review.gasScore != nil){
+                gasScoreReviews++;
+                totalGasScore += review.gasScore;
+            }
+        }
+    }
+
     static func getExistingStations() -> [GasStation] {
+        HTTPHandler.makeHTTPGetRequest(route: GasStation.ROUTE, httpBody: nil, callbackFunction: extractStations)
+        return returnedStations;
+
+        /*let station = GasStation(id: 1, lat: 19.021575, lng: -98.243071, name: "Combustibles Cúmulo de Virgo, S.A. de C.V.", address: "1909, Atlixcáyotl, Reserva Territorial Atlixcáyotl, Corredor Comercial Desarrollo Atlixcayotl, 72830 Puebla, Pue.",totalMagnaPrice: 45, totalPremiumPrice: 30, totalDieselPrice: 49, totalGeneralScore: 9, totalGasScore: 10, totalServiceScore: 8, totalTimeScore: 8.5, magnaPriceReviews: 2, premiumPriceReviews: 2, dieselPriceReviews: 2, generalScoreReviews: 2, gasScoreReviews: 2, serviceScoreReviews: 2, timeScoreReviews: 2);
         
-        let station = GasStation(id: 1, lat: 19.021575, lng: -98.243071, name: "Combustibles Cúmulo de Virgo, S.A. de C.V.", address: "1909, Atlixcáyotl, Reserva Territorial Atlixcáyotl, Corredor Comercial Desarrollo Atlixcayotl, 72830 Puebla, Pue.",totalMagnaPrice: 45, totalPremiumPrice: 30, totalDieselPrice: 49, totalGeneralScore: 9, totalGasScore: 10, totalServiceScore: 8, totalTimeScore: 8.5, magnaPriceReviews: 2, premiumPriceReviews: 2, dieselPriceReviews: 2, generalScoreReviews: 2, gasScoreReviews: 2, serviceScoreReviews: 2, timeScoreReviews: 2);
-        
-        return [station];
+        return [station];*/
     }
     
     static func getStation(withId id: Int) -> GasStation? {
-        return GasStation(id: 1, lat: 19.021575, lng: -98.243071, name: "Combustibles Cúmulo de Virgo, S.A. de C.V.", address: "1909, Atlixcáyotl, Reserva Territorial Atlixcáyotl, Corredor Comercial Desarrollo Atlixcayotl, 72830 Puebla, Pue.",totalMagnaPrice: 45, totalPremiumPrice: 30, totalDieselPrice: 49, totalGeneralScore: 9, totalGasScore: 10, totalServiceScore: 8, totalTimeScore: 8.5, magnaPriceReviews: 2, premiumPriceReviews: 2, dieselPriceReviews: 2, generalScoreReviews: 2, gasScoreReviews: 2, serviceScoreReviews: 2, timeScoreReviews: 2);
+        HTTPHandler.makeHTTPGetRequest(route: GasStation.ROUTE + "/\(id)", httpBody: nil, callbackFunction: extractStation)
+        return returnedStations[0];
+        /*return GasStation(id: 1, lat: 19.021575, lng: -98.243071, name: "Combustibles Cúmulo de Virgo, S.A. de C.V.", address: "1909, Atlixcáyotl, Reserva Territorial Atlixcáyotl, Corredor Comercial Desarrollo Atlixcayotl, 72830 Puebla, Pue.",totalMagnaPrice: 45, totalPremiumPrice: 30, totalDieselPrice: 49, totalGeneralScore: 9, totalGasScore: 10, totalServiceScore: 8, totalTimeScore: 8.5, magnaPriceReviews: 2, premiumPriceReviews: 2, dieselPriceReviews: 2, generalScoreReviews: 2, gasScoreReviews: 2, serviceScoreReviews: 2, timeScoreReviews: 2);*/
+    }
+
+    private static func extractStations(_ data: Data?) {
+        do {
+            let stations = try JSONDecoder().decode([GasStation].self, from: data!)
+
+            returnedStations.removeAll();
+            returnedStations += stations;
+
+            print ("\nDECODED GAS STATIONS: \(stations)\n")
+        }
+        catch let jsonError {
+            print(jsonError);
+        }
+    }
+    private static func extractStation(_ data: Data?) {
+        do {
+            let station = try JSONDecoder().decode(GasStation.self, from: data!)
+
+            returnedStations = [station];
+
+            print ("\nDECODED GAS STATION: \(station)\n")
+        }
+        catch let jsonError {
+            print(jsonError);
+        }
     }
 }

@@ -44,34 +44,15 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
             alertFailure(message)
         }
         else{
-            let mail = userMail.text
+            let email = userMail.text
             let pass = password.text
             
-            var params = [String: String]()
-            params["mail"] = mail
-            params["password"] = pass
-            
-            HTTPHandler.makeHTTPPostRequest(route: "/login", parameters: params, callbackFunction: self.handleResponse)
-            
-        }
-    }
-    
-    func handleResponse(data: Data?) -> Void {
-        let json = try? JSONSerialization.jsonObject(with: data!, options: [])
-        if let array = json as? [Any]{
-            if array.count == 1{
-                let jsonDecoder = JSONDecoder()
-                let array = try? jsonDecoder.decode([User].self, from: data!)
-                
-                let user = array!.first!
-                //Hace set del email.
-                User.loginLocalUser(id: user.id, username: user.username, email: user.email);
-                //Como fue exitoso, pasa a la siguiente vista
+            let result = User.login(email, pass);
+            if (result) {
                 self.performSegue(withIdentifier: "toTabBar", sender: self)
             }
-            else{
-                //Si no fue exitoso, manda mensaje de error
-                alertFailure("Usuario o contraseña incorrectos")
+            else {
+                alertFailure("Usuario o contraseña incorrectos");
             }
         }
     }

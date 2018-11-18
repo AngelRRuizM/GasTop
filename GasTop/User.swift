@@ -10,6 +10,9 @@ import Foundation
 
 class User : Codable
 {
+    static let ROUTE = "/users";
+    private static var returnedUser: User?;
+
     var id: Int;
     var username: String;
     var email:String;
@@ -24,7 +27,7 @@ class User : Codable
         self.username = username;
     }
     
-    static func loginLocalUser(id: Int, username: String, email: String) {
+    private static func loginLocalUser() {
         userDefaults.set(email, forKey: "email")
         userDefaults.synchronize()
         userDefaults.set(id, forKey: "id")
@@ -40,7 +43,33 @@ class User : Codable
         return userDefaults.string(forKey: "username");
     }
     
-    static func getUser (fromId id:Int) -> User? {
-        return nil;
+    static func getUser (fromId id: Int) -> User? {
+        HTTPHandler.makeHTTPGetRequest(route: User.ROUTE + "/\(id)", httpBody: nil, callbackFunction: extractUser)
+        return returnedUser;
     }
+
+    static func login(email: String, password: String) -> Bool {
+        let encodedEmail = email.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+        let encodedPassword = password.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+
+        HTTPHandler.makeHTTPPostRequest(route: User.ROUTE + "?email=\(encodedEmail)&password=\(encodedPassword)", parameters: nil, callbackFunction: extractUser);
+
+        if (returnedUser != nil) {
+            loginLocalUser();
+            return true;
+        }
+        return false;
+    }
+
+    static private func extractUser(_ data: Data?) {
+        do {
+            let user = try JSONDecoder().decode(User.self, from: data!)
+            returnedUser = user;
+            print ("\nDECODED USER: \(user)\n")
+        }
+        catch let jsonError {
+            print(jsonError);
+        }
+    }
+
 }
