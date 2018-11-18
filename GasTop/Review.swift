@@ -72,4 +72,12 @@ class Review: Codable
     static func createReview(_ review: Review) {
         
     }
+    
+    static func getReviews(fromUserId id: Int) -> [Review] {
+        return [];
+    }
+    
+    static func getReviews(forGasStationId id: Int) -> [Review] {
+        return [];
+    }
 }

@@ -13,6 +13,8 @@
 		FB524FCD216935790049508C /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB524FCC216935790049508C /* Review.swift */; };
 		FB524FCF21693A570049508C /* HTTPHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB524FCE21693A570049508C /* HTTPHandler.swift */; };
 		FB524FD121693B0B0049508C /* ExtensionURLRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB524FD021693B0B0049508C /* ExtensionURLRequest.swift */; };
+		FB53555C21A0EB5000F985AE /* ReviewViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB53555B21A0EB5000F985AE /* ReviewViewCell.swift */; };
+		FB53555E21A0F09200F985AE /* ReviewTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB53555D21A0F09200F985AE /* ReviewTableViewController.swift */; };
 		FB5D9790217BF2E000154835 /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5D978F217BF2E000154835 /* RatingControl.swift */; };
 		FB6065A32169113C004DCE97 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6065A22169113C004DCE97 /* AppDelegate.swift */; };
 		FB6065A52169113C004DCE97 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6065A42169113C004DCE97 /* LogInViewController.swift */; };
@@ -33,6 +35,8 @@
 		FB524FCC216935790049508C /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		FB524FCE21693A570049508C /* HTTPHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPHandler.swift; sourceTree = "<group>"; };
 		FB524FD021693B0B0049508C /* ExtensionURLRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionURLRequest.swift; sourceTree = "<group>"; };
+		FB53555B21A0EB5000F985AE /* ReviewViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewViewCell.swift; sourceTree = "<group>"; };
+		FB53555D21A0F09200F985AE /* ReviewTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewTableViewController.swift; sourceTree = "<group>"; };
 		FB5D978F217BF2E000154835 /* RatingControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; };
 		FB60659F2169113C004DCE97 /* GasTop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GasTop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB6065A22169113C004DCE97 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -97,6 +101,8 @@
 				FBE85D4F217D284700D2322C /* MapViewController.swift */,
 				FBE85D51217D42FA00D2322C /* ReviewViewController.swift */,
 				FB051468219898300043157F /* GasSationViewController.swift */,
+				FB53555B21A0EB5000F985AE /* ReviewViewCell.swift */,
+				FB53555D21A0F09200F985AE /* ReviewTableViewController.swift */,
 			);
 			path = GasTop;
 			sourceTree = "<group>";
@@ -192,7 +198,9 @@
 				FB051469219898300043157F /* GasSationViewController.swift in Sources */,
 				FB5D9790217BF2E000154835 /* RatingControl.swift in Sources */,
 				FB524FCF21693A570049508C /* HTTPHandler.swift in Sources */,
+				FB53555E21A0F09200F985AE /* ReviewTableViewController.swift in Sources */,
 				FB524FC921692C470049508C /* User.swift in Sources */,
+				FB53555C21A0EB5000F985AE /* ReviewViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

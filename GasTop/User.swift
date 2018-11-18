@@ -39,4 +39,8 @@ class User : Codable
     static func getLoggedUserUsername() -> String? {
         return userDefaults.string(forKey: "username");
     }
+    
+    static func getUser (fromId id:Int) -> User? {
+        return nil;
+    }
 }

@@ -238,6 +238,74 @@
             </objects>
             <point key="canvasLocation" x="-1489" y="-516"/>
         </scene>
+        <!--Review Table View Controller-->
+        <scene sceneID="P7M-ku-DTn">
+            <objects>
+                <tableViewController id="4eu-Mq-5FH" customClass="ReviewTableViewController" customModule="GasTop" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="NrW-QU-x4U">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="reviewCell" rowHeight="69" id="EhD-7k-mX7" customClass="ReviewViewCell" customModule="GasTop" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="69"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="EhD-7k-mX7" id="TDQ-Dv-Jpj">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="68.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Username" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fpy-Ej-1PS">
+                                            <rect key="frame" x="26" y="11" width="102" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Muy buena gasolinera &lt;3" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SIt-dg-z4E">
+                                            <rect key="frame" x="149" y="36" width="210" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="12/12/2208" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yCc-p2-lJi">
+                                            <rect key="frame" x="26" y="37" width="102" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xCX-iB-xpX" customClass="RatingControl" customModule="GasTop" customModuleProvider="target">
+                                            <rect key="frame" x="154" y="5" width="201" height="32"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="editable" value="NO"/>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="starCount">
+                                                    <integer key="value" value="5"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </stackView>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="dateLabel" destination="yCc-p2-lJi" id="Hl0-vL-9Xj"/>
+                                    <outlet property="generalCommentLabel" destination="SIt-dg-z4E" id="nhN-it-yan"/>
+                                    <outlet property="generalScore" destination="xCX-iB-xpX" id="eeL-vJ-5rc"/>
+                                    <outlet property="usernameLabel" destination="Fpy-Ej-1PS" id="R4h-k4-FGK"/>
+                                    <segue destination="2O7-io-zr6" kind="show" identifier="toReviewDetails" id="cQv-Uk-pDB"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="4eu-Mq-5FH" id="B7N-i2-PLT"/>
+                            <outlet property="delegate" destination="4eu-Mq-5FH" id="r6z-4n-A1J"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Thx-RE-7ke" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1452" y="258.62068965517244"/>
+        </scene>
         <!--Configuración-->
         <scene sceneID="0rj-RK-Tc6">
             <objects>
@@ -266,19 +334,19 @@
                                     <constraint firstItem="dqx-yI-i6s" firstAttribute="height" secondItem="eO6-lL-b2z" secondAttribute="height" multiplier="0.6" id="MBo-XI-Emf"/>
                                 </constraints>
                             </stackView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="LEf-5R-C1p">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="45" estimatedRowHeight="45" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="LEf-5R-C1p">
                                 <rect key="frame" x="9.5" y="292.5" width="356" height="146.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="DetailsTableViewCell" rowHeight="47" id="XxI-C6-gmO">
-                                        <rect key="frame" x="0.0" y="28" width="356" height="47"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="myReviewsCell" rowHeight="53" id="XxI-C6-gmO">
+                                        <rect key="frame" x="0.0" y="28" width="356" height="53"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="XxI-C6-gmO" id="fhd-EC-1nC">
-                                            <rect key="frame" x="0.0" y="0.0" width="323" height="46.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="323" height="52.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mis reseñas" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3GQ-bZ-x1t">
-                                                    <rect key="frame" x="11.5" y="3.5" width="290.5" height="39.5"/>
+                                                    <rect key="frame" x="11.5" y="4" width="290.5" height="44.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -291,6 +359,9 @@
                                                 <constraint firstItem="3GQ-bZ-x1t" firstAttribute="centerX" secondItem="fhd-EC-1nC" secondAttribute="centerX" multiplier="0.97" id="gmv-bJ-uOH"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="4eu-Mq-5FH" kind="show" id="Hbn-zo-r5S"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -300,6 +371,7 @@
                                 <state key="normal" title="Cerrar Sesión"/>
                                 <connections>
                                     <action selector="Logout:" destination="dcf-SU-G3Q" eventType="touchUpInside" id="IfS-ts-GZc"/>
+                                    <segue destination="06e-L0-ydS" kind="show" identifier="toLogin" id="ZBN-st-PgZ"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user_profile" translatesAutoresizingMaskIntoConstraints="NO" id="FO6-lD-niv">
@@ -332,6 +404,7 @@
                     <tabBarItem key="tabBarItem" title="Configuración" image="icon_user_config" id="f6z-vF-hRc"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
+                        <outlet property="tableView" destination="LEf-5R-C1p" id="8oi-J6-uQa"/>
                         <outlet property="usernameTextField" destination="dqx-yI-i6s" id="RUy-LP-zB3"/>
                     </connections>
                 </viewController>

@@ -42,6 +42,14 @@ class GasSationViewController: UIViewController {
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        let reviews = Review.getReviews(forGasStationId: gasStationId!);
+        calculateAndSetScores(withReviews: reviews)
+        //reviewsVC.reviews = reviews;
+    }
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -77,6 +85,10 @@ class GasSationViewController: UIViewController {
         timeScore.editable = false;
     }
 
+    //Calculates the average scores by counting which (of all reviews for this station) contributed to the score
+    private func calculateAndSetScores(withReviews reviews: [Review]) {
+        
+    }
 }
 
 enum ESceneMode {
