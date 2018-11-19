@@ -11,6 +11,7 @@ import UIKit
 class ReviewTableViewController: UITableViewController {
 
     var reviews: [Review] = [];
+    var selectedRow: Int = 0;
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,6 +52,10 @@ class ReviewTableViewController: UITableViewController {
         cell.updateData();
         
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedRow = indexPath.row;
     }
     
 
@@ -101,10 +106,7 @@ class ReviewTableViewController: UITableViewController {
         {
             targetViewController.sceneMode = .View;
             
-            guard let selectedReviewCell = sender as? ReviewViewCell else {
-                fatalError("Unexpected sender: \(String(describing: sender))")
-            }
-            targetViewController.review = selectedReviewCell.review;            
+            targetViewController.review = reviews[selectedRow];
         }
     }
     

@@ -28,9 +28,20 @@ class GasSationViewController: UIViewController {
     @IBOutlet weak var servicesScore: RatingControl!
     @IBOutlet weak var timeScore: RatingControl!
     
+    
+    @IBOutlet weak var reviewsLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let tapRecognizer = UITapGestureRecognizer()
+        tapRecognizer.addTarget(self, action: #selector(GasSationViewController.didTapReviews))
+        reviewsLabel.addGestureRecognizer(tapRecognizer)
 
+    }
+    
+    @objc private func didTapReviews() {
+        performSegue(withIdentifier: "toStationReviews", sender: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -68,6 +79,9 @@ class GasSationViewController: UIViewController {
             targetVC.forStationId = gasStationId;
             
             targetVC.sceneMode = .Create;
+        }
+        else if let targetVC = segue.destination as? ReviewTableViewController {
+            targetVC.reviews = stationReviews;
         }
     }
     

@@ -333,8 +333,10 @@
                         <outlet property="generalScore" destination="1hR-1R-9t6" id="Ig3-Zd-kex"/>
                         <outlet property="magnaPriceText" destination="cMB-QK-j35" id="N57-85-DwQ"/>
                         <outlet property="premiumPriceText" destination="p64-B2-WCL" id="dEd-aa-w87"/>
+                        <outlet property="reviewsLabel" destination="wqe-gF-wCL" id="zjU-bv-gJ1"/>
                         <outlet property="servicesScore" destination="PYe-fZ-nva" id="739-03-VAY"/>
                         <outlet property="timeScore" destination="5US-nZ-8bI" id="Ac3-hk-6UG"/>
+                        <segue destination="uIy-XL-bg7" kind="show" identifier="toStationReviews" id="agc-8f-2Ln"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wmg-dm-TEw" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -356,6 +358,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pm9-B6-CwW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3715" y="-184"/>
+        </scene>
+        <!--Storyboard Reference-->
+        <scene sceneID="LTm-JJ-eWz">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="reviewsScene" id="uIy-XL-bg7" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tBe-gm-3MC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3474" y="97"/>
         </scene>
     </scenes>
     <resources>
