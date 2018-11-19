@@ -32,8 +32,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
         
-        getGasStations();
-        setGasStationAnnotations();
+        GasStation.getExistingStations(callback: getGasStations);
         
         super.viewWillAppear(animated)
     }
@@ -86,10 +85,11 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     */
 
     //MARK: Map Data functions
-    func getGasStations() {
+    func getGasStations(_ stations: [GasStation]) {
         gasStations.removeAll();
         
-        gasStations.append(contentsOf: GasStation.getExistingStations());
+        gasStations.append(contentsOf: stations);
+        setGasStationAnnotations();
     }
     
     func setGasStationAnnotations() {

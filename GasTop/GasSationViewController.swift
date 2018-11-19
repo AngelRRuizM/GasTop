@@ -13,7 +13,8 @@ class GasSationViewController: UIViewController {
     var sceneMode: ESceneMode = .NA;
     var gasStationId: Int?;
     private var gasStation: GasStation?;
-    
+    private var stationReviews: [Review] = [];
+
     
     @IBOutlet weak var distanceLabel: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
@@ -30,24 +31,30 @@ class GasSationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        gasStation = GasStation.getStation(withId: gasStationId!);
-        
-        if gasStation != nil {
-            navigationItem.title = gasStation!.name;
-            
-            assignValuesToOutlets();
-        }
-        else {
-            print("Could not load gas station with id \(gasStationId!)");
-        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        let reviews = Review.getReviews(forGasStationId: gasStationId!);
-        calculateAndSetScores(withReviews: reviews)
-        //reviewsVC.reviews = reviews;
+        GasStation.getStation(withId: gasStationId!, callback: { (stations:[GasStation]) in
+            
+            if (stations.count > 0) {
+                self.gasStation = stations[0];
+                self.navigationItem.title = self.gasStation!.name;
+                
+                Review.getReviews(forGasStationId: self.gasStationId!, callback: { (reviews:[Review]) in
+                    self.stationReviews = reviews;
+                    self.gasStation!.computeGasStationScoring(fromReviews: reviews)
+                    self.assignValuesToOutlets();
+                    //reviewsVC.reviews = reviews;
+
+                })
+            }
+            else {
+                print("Station \(self.gasStationId!) could not load station object");
+            }
+        })
+        
     }
     
     // MARK: - Navigation
@@ -83,11 +90,6 @@ class GasSationViewController: UIViewController {
         gasScore.editable = false;
         servicesScore.editable = false;
         timeScore.editable = false;
-    }
-
-    //Calculates the average scores by counting which (of all reviews for this station) contributed to the score
-    private func calculateAndSetScores(withReviews reviews: [Review]) {
-        
     }
 }
 

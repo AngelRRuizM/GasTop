@@ -9,7 +9,7 @@ import Foundation
 
 class HTTPHandler{
     
-    static let URL = "http://10.50.65.22:8000/api"
+    static let URL = "http://10.50.126.68:3000"
     
     @objc static func makeHTTPGetRequest(route: String, httpBody: Data?, callbackFunction: @escaping (_ data: Data?) -> Void = { _ in }){
         
@@ -43,6 +43,8 @@ class HTTPHandler{
         request.addValue("application/JSON", forHTTPHeaderField: "Content-Type")
         request.httpMethod = httpMethod
         request.httpBody = httpBody
+        
+        print("\n\nMaking \(httpMethod) to \(ROUTE_URL)\n\n");
         
         dataTask = defaultSession.dataTask(with: request as URLRequest){
             

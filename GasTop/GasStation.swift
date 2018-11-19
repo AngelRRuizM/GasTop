@@ -19,9 +19,9 @@ enum GasStationKeys: String, CodingKey {
 
 class GasStation: NSObject, Codable, MKAnnotation
 {
-    static let ROUTE = "/gasStations";
-    private static var returnedStations: [GasStation] = [];
-
+    static let ROUTE = "/gasStation";
+    private static let returnedStationsCallbackDefault: (_ stations: [GasStation]) -> Void = { _ in }
+    private static var returnedStationsCallback = returnedStationsCallbackDefault;
     var id: Int;
     var lat: Float;
     var lng: Float;
@@ -104,106 +104,107 @@ class GasStation: NSObject, Codable, MKAnnotation
     }
 
 	func getAvgMagnaPrice() -> Float {
-        if (magnaPriceReviews == 0)
+        if (magnaPriceReviews == 0) {
             return 0;
+        }
 		return magnaPriceReviews == 0 ? 0 : totalMagnaPrice /  Float(magnaPriceReviews);
 	}
 
 	func getAvgPremiumPrice() -> Float {
-        if (premiumPriceReviews == 0)
+        if (premiumPriceReviews == 0) {
             return 0;
+        }
 		return premiumPriceReviews == 0 ? 0 : totalPremiumPrice / Float(premiumPriceReviews);
 	}
 
 	func getAvgDieselPrice() -> Float {
-        if (dieselPriceReviews == 0)
+        if (dieselPriceReviews == 0) {
             return 0;
+        }
 		return dieselPriceReviews == 0 ? 0 : totalDieselPrice / Float(dieselPriceReviews);
 	}
 
 	func getAvgGeneralScore() -> Float {
-        if (generalScoreReviews == 0)
+        if (generalScoreReviews == 0) {
             return 0;
+        }
 		return generalScoreReviews == 0 ? 0 : totalGeneralScore / Float(generalScoreReviews);
 	}
 
 	func getAvgGasScore() -> Float {
-        if (gasScoreReviews == 0)
+        if (gasScoreReviews == 0) {
             return 0;
+        }
 		return gasScoreReviews == 0 ? 0 : totalGasScore / Float(gasScoreReviews);
 	}
 
 	func getAvgServiceScore() -> Float {
-        if (serviceScoreReviews == 0)
+        if (serviceScoreReviews == 0) {
             return 0;
+        }
 		return serviceScoreReviews == 0 ? 0 : totalServiceScore / Float(serviceScoreReviews);
 	}
 
 	func getAvgTimeScore() -> Float {
-        if (timeScoreReviews == 0)
+        if (timeScoreReviews == 0) {
             return 0;
+        }
 		return timeScoreReviews == 0 ? 0 : totalTimeScore / Float(timeScoreReviews);
 	}
 
     func computeGasStationScoring(fromReviews reviews: [Review]) {
         for review in reviews {
             if (review.magnaPrice != nil){
-                magnaPriceReviews++;
-                totalMagnaPrice += review.magnaPrice;
+                magnaPriceReviews += 1;
+                totalMagnaPrice += review.magnaPrice!;
             }
             if (review.premiumPrice != nil){
-                premiumPriceReviews++;
-                totalPremiumPrice += review.premiumPrice;
+                premiumPriceReviews += 1;
+                totalPremiumPrice += review.premiumPrice!;
             }
             if (review.dieselPrice != nil){
-                dieselPriceReviews++;
-                totalDieselPrice += review.dieselPrice;
+                dieselPriceReviews += 1;
+                totalDieselPrice += review.dieselPrice!;
             }
 
-            if (review.generalScore != nil){
-                generalScoreReviews++;
-                totalGeneralScore += review.generalScore;
-            }
+            generalScoreReviews += 1;
+            totalGeneralScore += review.generalScore;
+            
             if (review.serviceScore != nil){
-                serviceScoreReviews++;
-                totalServiceScore += review.serviceScore;
+                serviceScoreReviews += 1;
+                totalServiceScore += review.serviceScore!;
             }
             if (review.timeScore != nil){
-                timeScoreReviews++;
-                totalTimeScore += review.timeScore;
+                timeScoreReviews += 1;
+                totalTimeScore += review.timeScore!;
             }
             if (review.gasScore != nil){
-                gasScoreReviews++;
-                totalGasScore += review.gasScore;
+                gasScoreReviews += 1;
+                totalGasScore += review.gasScore!;
             }
         }
     }
 
-    static func getExistingStations() -> [GasStation] {
-        HTTPHandler.makeHTTPGetRequest(route: GasStation.ROUTE, httpBody: nil, callbackFunction: extractStations)
-        return returnedStations;
-
-        /*let station = GasStation(id: 1, lat: 19.021575, lng: -98.243071, name: "Combustibles Cúmulo de Virgo, S.A. de C.V.", address: "1909, Atlixcáyotl, Reserva Territorial Atlixcáyotl, Corredor Comercial Desarrollo Atlixcayotl, 72830 Puebla, Pue.",totalMagnaPrice: 45, totalPremiumPrice: 30, totalDieselPrice: 49, totalGeneralScore: 9, totalGasScore: 10, totalServiceScore: 8, totalTimeScore: 8.5, magnaPriceReviews: 2, premiumPriceReviews: 2, dieselPriceReviews: 2, generalScoreReviews: 2, gasScoreReviews: 2, serviceScoreReviews: 2, timeScoreReviews: 2);
+    static func getExistingStations(callback: @escaping(_ reviews: [GasStation]) -> Void = { _ in }){
+        returnedStationsCallback = callback;
         
-        return [station];*/
+        HTTPHandler.makeHTTPGetRequest(route: GasStation.ROUTE, httpBody: nil, callbackFunction: extractStations)
     }
     
-    static func getStation(withId id: Int) -> GasStation? {
+    static func getStation(withId id: Int, callback: @escaping(_ reviews: [GasStation]) -> Void = { _ in }) {
+        returnedStationsCallback = callback;
         HTTPHandler.makeHTTPGetRequest(route: GasStation.ROUTE + "/\(id)", httpBody: nil, callbackFunction: extractStation)
-        return returnedStations[0];
-        /*return GasStation(id: 1, lat: 19.021575, lng: -98.243071, name: "Combustibles Cúmulo de Virgo, S.A. de C.V.", address: "1909, Atlixcáyotl, Reserva Territorial Atlixcáyotl, Corredor Comercial Desarrollo Atlixcayotl, 72830 Puebla, Pue.",totalMagnaPrice: 45, totalPremiumPrice: 30, totalDieselPrice: 49, totalGeneralScore: 9, totalGasScore: 10, totalServiceScore: 8, totalTimeScore: 8.5, magnaPriceReviews: 2, premiumPriceReviews: 2, dieselPriceReviews: 2, generalScoreReviews: 2, gasScoreReviews: 2, serviceScoreReviews: 2, timeScoreReviews: 2);*/
     }
 
     private static func extractStations(_ data: Data?) {
         do {
             let stations = try JSONDecoder().decode([GasStation].self, from: data!)
 
-            returnedStations.removeAll();
-            returnedStations += stations;
-
+            returnedStationsCallback(stations);
             print ("\nDECODED GAS STATIONS: \(stations)\n")
         }
         catch let jsonError {
+            returnedStationsCallback = returnedStationsCallbackDefault;
             print(jsonError);
         }
     }
@@ -211,11 +212,12 @@ class GasStation: NSObject, Codable, MKAnnotation
         do {
             let station = try JSONDecoder().decode(GasStation.self, from: data!)
 
-            returnedStations = [station];
+            returnedStationsCallback([station]);
 
             print ("\nDECODED GAS STATION: \(station)\n")
         }
         catch let jsonError {
+            returnedStationsCallback = returnedStationsCallbackDefault;
             print(jsonError);
         }
     }

@@ -13,6 +13,8 @@ class ConfigurationViewController: UIViewController, UITextFieldDelegate, UITabl
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var tableView: UITableView!
     
+    private var userReviews: [Review] = [];
+    
     let userDefaults = UserDefaults.standard;
     
     override func viewDidLoad() {
@@ -24,14 +26,17 @@ class ConfigurationViewController: UIViewController, UITextFieldDelegate, UITabl
         tableView.dataSource = self;
         tableView.delegate = self;
         tableView.tableFooterView = UIView() //show only populated rows
-        tableView.isScrollEnabled = false
-
+        tableView.isScrollEnabled = false;
 
     }
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
         super.viewWillAppear(animated)
+        
+        Review.getReviews(fromUserId: userDefaults.integer(forKey: "id"), callback: { (reviews:[Review]) in
+            self.userReviews = reviews;
+        })
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -71,8 +76,7 @@ class ConfigurationViewController: UIViewController, UITextFieldDelegate, UITabl
         
         if let targetViewController = segue.destination as? ReviewTableViewController
         {
-            let id = userDefaults.integer(forKey: "id");
-            targetViewController.reviews = Review.getReviews(fromUserId: id);
+            targetViewController.reviews = userReviews;
             
         }
     }

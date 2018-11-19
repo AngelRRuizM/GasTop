@@ -43,7 +43,6 @@ class ReviewTableViewController: UITableViewController {
         }
         // Configure the cell...
         let review = reviews[indexPath.row];
-        
         cell.review = review;
         cell.updateData();
         
@@ -101,9 +100,7 @@ class ReviewTableViewController: UITableViewController {
             guard let selectedReviewCell = sender as? ReviewViewCell else {
                 fatalError("Unexpected sender: \(String(describing: sender))")
             }
-            targetViewController.review = selectedReviewCell.review;
-            //reviews[tableView.indexPathForSelectedRow!.row]
-            
+            targetViewController.review = selectedReviewCell.review;            
         }
     }
     

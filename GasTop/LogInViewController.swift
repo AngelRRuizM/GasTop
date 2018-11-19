@@ -36,9 +36,6 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
 
     @IBAction func logIn(_ sender: Any) {
         
-        self.performSegue(withIdentifier: "toTabBar", sender: self)
-        return;
-        
         if (userMail.text?.isEmpty)! || (password.text?.isEmpty)! {
             let message = "Proporcione correo y contraseña validos"
             alertFailure(message)
@@ -47,13 +44,17 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
             let email = userMail.text
             let pass = password.text
             
-            let result = User.login(email, pass);
-            if (result) {
-                self.performSegue(withIdentifier: "toTabBar", sender: self)
-            }
-            else {
-                alertFailure("Usuario o contraseña incorrectos");
-            }
+            User.login(email: email!, password: pass!, callback: wasLoginSuccesful);
+           
+        }
+    }
+    
+    func wasLoginSuccesful(_ user: User?) {
+        if (user != nil) {
+            self.performSegue(withIdentifier: "toTabBar", sender: self)
+        }
+        else {
+            alertFailure("Usuario o contraseña incorrectos");
         }
     }
     

@@ -29,12 +29,14 @@ class ReviewViewCell: UITableViewCell {
     }
     
     func updateData() {
-        let user: User = User.getUser(fromId: review!.byUser)!;
-        usernameLabel.text = user.username;
+        User.getUser(fromId: review!.byUser, callback: updateDataAux);
         
-        let formater = DateFormatter()
-        formater.dateFormat = "dd/MM/yy"
-        dateLabel.text = formater.string(from: review!.date)
+    }
+    
+    private func updateDataAux(_ user: User?) {
+        usernameLabel.text = user!.username;
+                
+        dateLabel.text = review!.date.toString();
         
         generalCommentLabel.text = review!.generalComment;
         
