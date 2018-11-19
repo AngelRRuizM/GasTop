@@ -84,6 +84,7 @@ class ConfigurationViewController: UIViewController, UITextFieldDelegate, UITabl
     
     @IBAction func Logout(_ sender: UIButton) {
         self.removeFromParentViewController();
+        User.logout();
         self.performSegue(withIdentifier: "toLogin", sender: self)
 
     }

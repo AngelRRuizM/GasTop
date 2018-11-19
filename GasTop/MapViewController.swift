@@ -13,6 +13,8 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
 
     @IBOutlet weak var map: MKMapView!
     
+    private var initialLocationSet = false;
+    
     var manager = CLLocationManager();
     var gasStations: [GasStation] = [];
     var currentUserLocation: CLLocationCoordinate2D?;
@@ -45,8 +47,16 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     //MARK: MapViewDelegate Functions
     
     func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
+        
+        if (initialLocationSet) {
+            return;
+        }
+        
         let region = MKCoordinateRegionMakeWithDistance(userLocation.coordinate, 700, 700);
         map.setRegion(region, animated: true);
+        
+        initialLocationSet = true;
+        manager.stopUpdatingLocation();
     }
     
     //Does segue to gas station details if the annotation selected is a GasStation

@@ -71,7 +71,7 @@ class HTTPHandler{
         dataTask?.resume()
     }
     
-    @objc static func makeHTTPPostRequest(route: String, parameters: [String : String], callbackFunction: @escaping (_ data: Data?) -> Void = { _ in }){
+    @objc static func makeHTTPPostRequest(route: String, parameters: [String : Any], callbackFunction: @escaping (_ data: Data?) -> Void = { _ in }){
         
         let ROUTE_URL = self.URL + route
         let url = NSURL (string: ROUTE_URL)

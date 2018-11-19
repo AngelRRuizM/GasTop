@@ -77,23 +77,30 @@ class Review: Codable
         let container = try decoder.container(keyedBy: ReviewKeys.self);
 
         self.id = try container.decode(Int.self, forKey: .id);
-        self.byUser = try container.decode(Int.self, forKey: .byUser);
-        self.forGasStation = try container.decode(Int.self, forKey: .forGasStation);
+        self.byUser = try Int(container.decode(String.self, forKey: .byUser))!;
+        self.forGasStation = try Int(container.decode(String.self, forKey: .forGasStation))!;
 
         let dateString = try container.decode(String.self, forKey: .date);
         self.date = Date.fromString(dateString);
 
-        self.generalScore = try container.decode(Float.self, forKey: .generalScore);
+        self.generalScore = try Float(container.decode(String.self, forKey: .generalScore))!;
         self.generalComment = try? container.decode(String.self, forKey: .generalComment);
-        self.magnaPrice = try? container.decode(Float.self, forKey: .magnaPrice);
-        self.premiumPrice = try? container.decode(Float.self, forKey: .premiumPrice);
-        self.dieselPrice = try? container.decode(Float.self, forKey: .dieselPrice);
 
-        self.serviceScore = try? container.decode(Float.self, forKey: .serviceScore);
+        let magnaPrice = try? container.decode(String.self, forKey: .magnaPrice);
+        self.magnaPrice = magnaPrice == nil ? nil: Float(magnaPrice!)
+        let premiumPrice = try? container.decode(String.self, forKey: .premiumPrice);
+        self.premiumPrice = premiumPrice == nil ? nil: Float(premiumPrice!)
+        let dieselPrice = try? container.decode(String.self, forKey: .dieselPrice);
+        self.dieselPrice = dieselPrice == nil ? nil: Float(dieselPrice!)
+
+        let serviceScore = try? container.decode(String.self, forKey: .serviceScore);
+        self.serviceScore = serviceScore == nil ? nil: Float(serviceScore!)
         self.serviceComment = try? container.decode(String.self, forKey: .serviceComment);
-        self.timeScore = try? container.decode(Float.self, forKey: .timeScore);
+        let timeScore = try? container.decode(String.self, forKey: .timeScore);
+        self.timeScore = timeScore == nil ? nil: Float(timeScore!)
         self.timeComment = try? container.decode(String.self, forKey: .timeComment);
-        self.gasScore = try? container.decode(Float.self, forKey: .gasScore);
+        let gasScore = try? container.decode(String.self, forKey: .gasScore);
+        self.gasScore = gasScore == nil ? nil: Float(gasScore!)
         self.gasComment = try? container.decode(String.self, forKey: .gasComment);
     }
 
@@ -134,44 +141,44 @@ class Review: Codable
         self.init (id: -1, byUser: byUser, forGasStation: forGasStation, date: date, generalScore: generalScore, generalComment: nil, magnaPrice: nil, premiumPrice: nil, dieselPrice: nil, serviceScore: nil, serviceComment: nil, timeScore: nil, timeComment: nil, gasScore: nil, gasComment: nil)
     }
     
-    func getAsJSONParams() -> [String : String] {
-        var jsonDic = [
-            "byUser": String(byUser),
-            "forGasStation" : String(forGasStation),
+    func getAsJSONParams() -> [String : Any] {
+        var jsonDic: [String: Any] = [
+            "byUser": byUser,
+            "forGasStation" : forGasStation,
             "date" : date.toString(),
-            "generalScore" : String(generalScore)
-        ];
+            "generalScore" : generalScore
+            ] as [String : Any];
 
         if (generalComment != nil) {
             jsonDic["generalComment"] = String(generalComment!);
         }
         if (magnaPrice != nil) {
-            jsonDic["magnaPrice"] = String(magnaPrice!);
+            jsonDic["magnaPrice"] = magnaPrice!;
         }
         if (premiumPrice != nil) {
-            jsonDic["premiumPrice"] = String(premiumPrice!);
+            jsonDic["premiumPrice"] = premiumPrice!;
         }
         if (dieselPrice != nil) {
-            jsonDic["dieselPrice"] = String(dieselPrice!);
+            jsonDic["dieselPrice"] = dieselPrice!;
         }
 
         if (serviceScore != nil) {
-            jsonDic["serviceScore"] = String(serviceScore!);
+            jsonDic["serviceScore"] = serviceScore!;
         }
         if (serviceComment != nil) {
-            jsonDic["serviceComment"] = String(serviceComment!);
+            jsonDic["serviceComment"] = serviceComment!;
         }
         if (timeScore != nil) {
-            jsonDic["timeScore"] = String(timeScore!);
+            jsonDic["timeScore"] = timeScore!;
         }
         if (timeComment != nil) {
-            jsonDic["timeComment"] = String(timeComment!);
+            jsonDic["timeComment"] = timeComment!;
         }
         if (gasScore != nil) {
-            jsonDic["gasScore"] = String(gasScore!);
+            jsonDic["gasScore"] = gasScore!;
         }
         if (gasComment != nil) {
-            jsonDic["gasComment"] = String(gasComment!)
+            jsonDic["gasComment"] = gasComment!;
         }
         
         return jsonDic;
