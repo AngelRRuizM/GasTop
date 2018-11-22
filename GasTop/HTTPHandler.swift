@@ -9,7 +9,7 @@ import Foundation
 
 class HTTPHandler{
     
-    static let URL = "http://10.50.126.68:3000"
+    static let URL = "https://gastop-entrepeneurship.herokuapp.com"
     
     @objc static func makeHTTPGetRequest(route: String, httpBody: Data?, callbackFunction: @escaping (_ data: Data?) -> Void = { _ in }){
         

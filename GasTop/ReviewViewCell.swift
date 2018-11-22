@@ -27,20 +27,5 @@ class ReviewViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
-    func updateData() {
-        User.getUser(fromId: review!.byUser, callback: updateDataAux);
-        
-    }
-    
-    private func updateDataAux(_ user: User?) {
-        usernameLabel.text = user!.username;
-                
-        dateLabel.text = review!.date.toString();
-        
-        generalCommentLabel.text = review!.generalComment;
-        
-        generalScore.rating = Double(review!.generalScore);
-    }
 
 }

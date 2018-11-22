@@ -49,7 +49,11 @@ class ReviewTableViewController: UITableViewController {
         // Configure the cell...
         let review = reviews[indexPath.row];
         cell.review = review;
-        cell.updateData();
+        
+        cell.usernameLabel.text = UserDefaults.standard.string(forKey: "username")
+        cell.dateLabel.text = review.date.toString();
+        cell.generalScore.rating = Double(review.generalScore);
+        cell.generalCommentLabel.text = review.generalComment;
         
         return cell
     }
